@@ -63,14 +63,17 @@ every template):
 │   ├── configs/
 │   ├── scripts/
 │   └── results/
+├── tools/
+│   └── growth_tree.py            ← templates/growth_tree.py  (copied verbatim — tree renderer)
 └── .fleet/
     ├── outcomes.jsonl            (create empty — the outcome ledger, see fleet references)
+    ├── growth.jsonl              (create empty — the growth log, see fleet references)
     └── traces/
         └── README.md             ← templates/traces-README.md.template
 ```
 
-Also create the (empty) `docs/fleet/` directory — the coach agent writes
-improvement reports there.
+Also create the (empty) `docs/fleet/` directory — the coach writes
+improvement reports there and the steward renders `tree.html` there.
 
 Template files live in this skill's `templates/` directory
 (`${CLAUDE_PLUGIN_ROOT}/skills/research-init/templates/`).

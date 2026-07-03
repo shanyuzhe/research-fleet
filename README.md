@@ -32,8 +32,10 @@ The goal isn't a PDF — it's **your own research system, grown alongside an
 agent team**. You keep every judgment call (questions, criteria, gates,
 narrative); agents tend the rest. Progress is always visible: each line of
 work moves 🌰 idea → 🌱 preregistered → 🌿 data → 🪴 audited → 🌳 verified →
-🍎 in paper on one page, and the draft assembles itself from verified claims
-as you go. Blind spots are surfaced (confusion ledgers, placeholders) rather
+🍎 in paper on one page, the draft assembles itself from verified claims as
+you go — and `python tools/growth_tree.py` replays the whole history as an
+**animated growing tree** (`docs/fleet/tree.html`: timeline scrubber,
+click-a-leaf provenance, dead branches kept as honest history). Blind spots are surfaced (confusion ledgers, placeholders) rather
 than smoothed over — you finish knowing *more*, not less. By the time the
 paper is "done", it has been done for weeks: the final compile is a harvest,
 not a scramble.

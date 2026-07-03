@@ -33,7 +33,13 @@ anything.
    status values you copy, never assign.
 3. **`docs/journal/<date>.md`** — optional daily digest (≤50 lines): done /
    in-progress / next / risks / today's numbers table with source paths.
-4. **Naming lint** (repo-discipline contract §3) — on each sync pass, scan
+4. **Growth log & tree** (growth-log contract) — on each sync pass (or
+   whenever any line of work changes stage), append one complete snapshot
+   to `.fleet/growth.jsonl` (every known line with its current stage; dead
+   lines keep `dead: true` forever), then regenerate the animated tree:
+   `python tools/growth_tree.py` → `docs/fleet/tree.html`. Stages obey the
+   same truthfulness rule as the Growth view — files decide, not optimism.
+5. **Naming lint** (repo-discipline contract §3) — on each sync pass, scan
    for violations of the naming table: spaces, uppercase slugs,
    `final|new|latest|tmp|copy` tokens, undated time-ordered docs. Output a
    rename checklist (`old → new`, as `git mv` commands) for the PI to apply
