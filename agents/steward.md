@@ -39,7 +39,15 @@ anything.
    lines keep `dead: true` forever), then regenerate the animated tree:
    `python tools/growth_tree.py` → `docs/fleet/tree.html`. Stages obey the
    same truthfulness rule as the Growth view — files decide, not optimism.
-5. **Naming lint** (repo-discipline contract §3) — on each sync pass, scan
+5. **Obsidian learning vault** (obsidian-notes contract) — on each sync
+   pass: create today's `notes/daily/` note if absent ("what moved" from
+   the growth-log diff; "worth understanding" harvested from confusion
+   ledgers, audit blocking items and gate decisions, each linked to a
+   concept card stub); update `notes/lines/<slug>.md` timelines and the
+   MOC. **Rewrite only inside `<!-- fleet:begin/end -->` markers** — human
+   text is never touched; hand-made notes (no markers) are never edited;
+   no retroactive diary entries for silent days.
+6. **Naming lint** (repo-discipline contract §3) — on each sync pass, scan
    for violations of the naming table: spaces, uppercase slugs,
    `final|new|latest|tmp|copy` tokens, undated time-ordered docs. Output a
    rename checklist (`old → new`, as `git mv` commands) for the PI to apply

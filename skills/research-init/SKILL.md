@@ -63,6 +63,9 @@ every template):
 │   ├── configs/
 │   ├── scripts/
 │   └── results/
+├── notes/                        (Obsidian-ready learning vault — see obsidian-notes contract)
+│   ├── 00_MOC.md                 ← templates/notes-MOC.md.template
+│   └── daily/  lines/  concepts/  papers/   (empty dirs)
 ├── tools/
 │   └── growth_tree.py            ← templates/growth_tree.py  (copied verbatim — tree renderer)
 └── .fleet/

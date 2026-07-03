@@ -5,20 +5,46 @@ Reads .fleet/growth.jsonl (see the growth-log contract), writes
 docs/fleet/tree.html — a single self-contained page with an SVG tree,
 a timeline scrubber, a play button and a click-a-leaf detail panel.
 
-Usage: python tools/growth_tree.py [project_root]
+Usage:
+  python tools/growth_tree.py [project_root]            # write docs/fleet/tree.html
+  python tools/growth_tree.py [project_root] --ascii    # print current tree in terminal
+  python tools/growth_tree.py [project_root] --ascii --replay   # animate history in terminal
 """
 import json
 import sys
+import time
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 STAGES = ["idea", "prereg", "data", "audited", "verified", "paper"]
+EMOJI = {"idea": "🌰", "prereg": "🌱", "data": "🌿",
+         "audited": "🪴", "verified": "🌳", "paper": "🍎"}
+
+
+def ascii_tree(snaps, replay):
+    frames = snaps if replay else [snaps[-1]]
+    for fi, s in enumerate(frames):
+        lines = s["lines"]
+        done = sum(1 for l in lines if l["stage"] in ("verified", "paper"))
+        dead = sum(1 for l in lines if l.get("dead"))
+        print(f"\n  {s['ts']}  ({fi + 1}/{len(snaps)})" if replay else f"\n  {s['ts']}")
+        print("  │")
+        for i, l in enumerate(lines):
+            conn = "└─" if i == len(lines) - 1 else "├─"
+            mark = "✝ " if l.get("dead") else EMOJI[l["stage"]]
+            note = f"  {l['note']}" if l.get("note") else ""
+            print(f"  {conn}{mark} {l['slug']:<24} [{l['stage']}]{note}")
+        print(f"\n  verified+: {done}/{len(lines)} · graveyard: {dead}")
+        if replay and fi < len(frames) - 1 and sys.stdout.isatty():
+            time.sleep(0.5)
 
 
 def main():
-    root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(".")
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    flags = {a for a in sys.argv[1:] if a.startswith("--")}
+    root = Path(args[0]) if args else Path(".")
     src = root / ".fleet" / "growth.jsonl"
     if not src.exists():
         raise SystemExit(f"[fail] growth log not found: {src}")
@@ -44,6 +70,10 @@ def main():
                 raise SystemExit(
                     f"[fail] snapshot {s['ts']}: unknown stage {ln.get('stage')!r} "
                     f"(allowed: {STAGES})")
+
+    if "--ascii" in flags:
+        ascii_tree(snaps, replay="--replay" in flags)
+        return
 
     out = root / "docs" / "fleet" / "tree.html"
     out.parent.mkdir(parents=True, exist_ok=True)

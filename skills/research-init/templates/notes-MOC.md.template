@@ -1,0 +1,26 @@
+---
+type: moc
+project: "{{PROJECT_NAME}}"
+---
+# 🗺️ {{PROJECT_NAME}} — Map of Content
+
+> Open `notes/` as an Obsidian vault (or add it to yours). The steward keeps
+> machine sections fresh; everything outside `fleet` markers is yours.
+> Daily ritual: open today's note in `daily/`, clear the "worth
+> understanding" checkboxes by writing the concept cards they point to.
+
+<!-- fleet:begin -->
+## Threads (lines of work)
+_(links appear as threads are planted)_
+
+## Recent daily notes
+_(last 7 days)_
+
+## Concepts awaiting your answer
+_(unresolved cards — your reading list)_
+
+## Papers read
+_(scout-verified literature notes)_
+<!-- fleet:end -->
+
+## My standing questions
