@@ -543,12 +543,12 @@ def check_single_claim(root, claim_path, as_json, sym):
             p = _longpath(Path.cwd() / claim_path)  # fall back to cwd-relative
     if not p.is_file():
         die(f"claim file not found: {claim_path}")
-    errors = []
+    shown = _display(p)
     try:
         fm = parse_frontmatter(p.read_text(encoding="utf-8"), p.name)
     except Exception as e:
         if as_json:
-            print(json.dumps({"claim": str(p), "ok": False, "violations": [str(e)]}))
+            print(json.dumps({"claim": shown, "ok": False, "violations": [str(e)]}))
         else:
             print(f"{sym.RED}  {p.name}: {e}")
         return 1
@@ -561,7 +561,7 @@ def check_single_claim(root, claim_path, as_json, sym):
     }
     vio = check_c1(root, [claim]) + check_c5(root, [claim])
     if as_json:
-        print(json.dumps({"claim": str(p), "ok": not vio, "violations": vio}))
+        print(json.dumps({"claim": shown, "ok": not vio, "violations": vio}))
     else:
         if vio:
             print(f"{sym.RED}  {cid} — {len(vio)} violation(s):")
