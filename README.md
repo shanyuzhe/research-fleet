@@ -1,103 +1,105 @@
-# ResearchFleet ⛵
+<div align="center">
 
-> **Spawn your research crew in one command.**
-> A Claude Code plugin that scaffolds a disciplined ML research project and
-> staffs it with a seven-agent team — led by your main session as PI.
->
-> *a.k.a. **The PI Simulator** — every grad student deserves to know what
-> running a lab feels like. Your crew never sleeps, never sulks, and never
-> claims a result without an audit trail.*
+# ⛵ ResearchFleet
 
-[English](README.md) · [中文](README.zh-CN.md) · MIT License
+**Spawn your research crew in one command.**
+
+A Claude Code plugin that scaffolds a disciplined ML research project
+and staffs it with a seven-agent team — led by your main session as PI.
+
+*a.k.a. **The PI Simulator** — your crew never sleeps, never sulks,
+and never claims a result without an audit trail.*
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](https://claude.com/claude-code)
+[![Version](https://img.shields.io/badge/version-0.1-green.svg)](ROADMAP.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+**English** · [中文](README.zh-CN.md)
+
+</div>
 
 ---
 
-**One command** (`/research-init`) gives you:
+One command — `/research-init` — gives you three things:
 
-- 📁 A **research project skeleton** — code, paper and experiment assets with
-  single-source-of-truth wiring (constitution, preregistrations, claims,
-  audit traces, handoff page)
-- 🧑‍🔬 A **seven-agent fleet** — scout, engineer, auditor, writer, presenter,
-  steward, coach — each a specialist with hard rules and forbidden zones
-- 🧭 A **leader constitution** (project `CLAUDE.md`) that turns your main
-  Claude session into the PI: it routes work to the fleet, you just talk to it
+| | |
+|---|---|
+| 📁 **A disciplined project skeleton** | constitution · preregistrations · claims · audit traces · handoff page — all single-source-of-truth wired |
+| 🧑‍🔬 **A seven-agent research team** | scout · engineer · auditor · writer · presenter · steward · coach — each with hard rules and forbidden zones |
+| 🧭 **A leader constitution** | your main Claude session becomes the PI: it routes work to the fleet, you just talk to it |
 
-Built from a year of real, painful, LLM-agent-driven research — every
-mechanism traces to a documented failure
-(**[docs/lessons.md](docs/lessons.md)**: 15 war stories → 15 mechanisms).
+Every mechanism here traces to a documented research failure we personally
+paid for — **[docs/lessons.md](docs/lessons.md)**: 15 war stories → 15 mechanisms.
 
-## Philosophy: from a seed to a tree
-
-The goal isn't a PDF — it's **your own research system, grown alongside an
-agent team**. You keep every judgment call (questions, criteria, gates,
-narrative); agents tend the rest. Progress is always visible: each line of
-work moves 🌰 idea → 🌱 preregistered → 🌿 data → 🪴 audited → 🌳 verified →
-🍎 in paper on one page, the draft assembles itself from verified claims as
-you go — and `python tools/growth_tree.py` replays the whole history as an
-**animated growing tree** (`docs/fleet/tree.html`: timeline scrubber,
-click-a-leaf provenance, dead branches kept as honest history; `--ascii`
-for the terminal). For daily review, the steward maintains an
-**Obsidian-ready learning vault** (`notes/`): what moved today, what's
-worth understanding (harvested from confusion ledgers and audit verdicts),
-one linked note per research thread — your knowledge graph grows with the
-tree, and human sections are never machine-touched. Blind spots are surfaced (confusion ledgers, placeholders) rather
-than smoothed over — you finish knowing *more*, not less. By the time the
-paper is "done", it has been done for weeks: the final compile is a harvest,
-not a scramble.
-
-## Why
-
-Agentic research tooling has a paradox: the more honestly your agents record
-what happened, the worse your paper gets — dead ends and self-criticism flood
-the writing context until the paper reads like an apology. And the more rules
-you write, the more get skipped under deadline pressure.
-
-ResearchFleet's two answers:
-
-1. **Two-context isolation.** Your internal ledger (`docs/findings/`) stays
-   brutally honest. The writer agent is *firewalled* from it — it writes only
-   from `claims/` (audit-gated, verified results with usage boundaries) and a
-   story contract (`paper/NARRATIVE.md`). Honesty and narrative each get a
-   context where they can be total.
-2. **Enforcement lives in files, not vigilance.** Claim upgrades require an
-   `audit_passed` marker on disk. Experiments require a preregistration file.
-   The paper requires verified claims. Rules in prose get skipped; file
-   formats don't.
-
-## Why not a fully-autonomous "AI Scientist"?
-
-Independent evaluations of autonomous-scientist systems keep reaching the
-same verdict: shallow novelty checks, no critical assessment of their own
-results, hallucinated citations, and a hard dependency on human supervision
-they claim to remove. Multi-agent frameworks add their own tax: ~3× token
-footprints, chat loops, coordination overhead.
-
-ResearchFleet starts where those evaluations end: **supervision is the
-product.** You keep the judgment calls; the fleet makes supervision cheap and
-mechanical (independent adversarial audits, file-level gates, zero standing
-agent cost). Full failure-mode analysis with sources:
-[docs/landscape.md](docs/landscape.md).
-
-## Quickstart
+## ⚡ Quickstart
 
 ```bash
-# 1. Install the plugin (pick one)
-claude --plugin-dir /path/to/research-fleet      # local
-# or add via your plugin marketplace once published
+# 1 · Install (pick one)
+claude --plugin-dir /path/to/research-fleet      # local clone
+#     …or from a plugin marketplace once published
 
-# 2. In your (new) project directory
+# 2 · Initialize — three questions: project name, field, target venue
 claude
 > /research-init
-# answers three questions: project name, field, target venue
 
-# 3. Do research by talking to the leader
-> "Has anyone probed VLM hidden states for judgment quality?"   # → scout flies
-> "Let's preregister the probing experiment"                    # → leader + you
-> "Implement and run it"                                        # → auditor design-checks, engineer runs
-> "Write the results section"                                   # → writer (verified claims only)
+# 3 · Do research by talking to the leader in plain language
+> "Has anyone probed VLM hidden states for judge quality?"   # → scout flies
+> "Let's preregister the probing experiment"                 # → leader + you, together
+> "Implement and run it"                                     # → auditor design-checks, engineer runs
+> "Write the results section"                                # → writer (verified claims only)
+> "Show me the tree"                                         # → 🌳 watch your project grow
 ```
 
-## The fleet
+No commands to memorize beyond `/research-init` — the generated
+`CHEATSHEET.md` is one page, and the leader does the routing.
+
+## 🌰 Philosophy: from a seed to a tree
+
+The goal isn't a PDF. It's **your own research system, grown alongside an
+agent team**:
+
+- **You stay in control.** Every judgment call — questions, criteria, gate
+  decisions, narrative — is yours by contract. Agents scaffold; they never
+  decide.
+- **Progress is always visible.** Each line of work moves
+  🌰 idea → 🌱 preregistered → 🌿 data → 🪴 audited → 🌳 verified → 🍎 in-paper,
+  on one page — and as an animated growing tree (below).
+- **You finish knowing more, not less.** Blind spots are surfaced
+  (confusion ledgers, placeholders), never smoothed over; a daily Obsidian
+  review note turns them into your reading list.
+- **Completion is a harvest, not a scramble.** The draft assembles itself
+  from verified claims as they mature — by the time the paper is "done",
+  it has been done for weeks.
+
+## 🌳 Watch your research grow
+
+Three views over one append-only growth log (`.fleet/growth.jsonl`):
+
+```bash
+python tools/growth_tree.py            # docs/fleet/tree.html — animated SVG tree:
+                                       #   timeline scrubber · click-a-leaf provenance
+                                       #   dead branches kept as honest history
+python tools/growth_tree.py --ascii    # the same tree, in any terminal / ssh
+```
+
+```
+  2026-07-03
+  │
+  ├─🍎 readout_gap              [paper]    in section 4.1
+  ├─✝  fusion_gate              [data]     killed: baseline confound
+  └─🪴 visual_leg               [audited]  production queued
+
+  verified+: 1/3 · graveyard: 1
+```
+
+And for daily review, the steward maintains an **Obsidian-ready learning
+vault** (`notes/`): what moved today, what's worth understanding (harvested
+from confusion ledgers and audit verdicts into concept cards you answer
+yourself), one linked note per research thread. Your knowledge graph grows
+with the tree — and human-written sections are never machine-touched.
+
+## 🧑‍🔬 The fleet
 
 ```mermaid
 flowchart TD
@@ -107,7 +109,7 @@ flowchart TD
     L --> A[auditor 🔍<br/>design & execution audits · forensics]
     L --> W[writer ✍️<br/>outline · LaTeX · figures]
     L --> P[presenter 📽️<br/>paper-study · progress · talk decks]
-    L --> ST[steward 📋<br/>handoff page · claims index · journal]
+    L --> ST[steward 📋<br/>handoff · notes vault · growth log]
     L --> C[coach 🎯<br/>mines outcomes → fleet upgrades]
     S --> lit[(docs/lit)]
     E --> res[(experiments/results)]
@@ -115,33 +117,26 @@ flowchart TD
     W --> paper[(paper/)]
     P --> decks[(presentations/)]
     ST --> cs[(docs/CURRENT_STATE.md)]
-    ol[(.fleet/outcomes.jsonl<br/>one honest line per task, all agents)] --> C
-    C --> fi[(docs/fleet/ improvement proposals)]
+    ol[(.fleet/outcomes.jsonl<br/>one honest line per task)] --> C
+    C --> fi[(docs/fleet/ proposals)]
     cl[(claims/ — the only door<br/>between findings and paper)] --> W
     tr -- audit_passed unlocks --> cl
 ```
 
-| agent | absorbs | hard rule that earns its keep |
+| agent | absorbs | the hard rule that earns its keep |
 |---|---|---|
-| **scout** | lit search, novelty check, reference verification, anchor hunting | zero fabrication — every citation verified live, or marked `[UNVERIFIED]` |
-| **engineer** | implement, smoke, run, monitor, analyze | fail loud; 3 seeds; held-out always; **cannot change protocol** |
-| **auditor** | design/experiment/paper audits, reviewer-side forensics | design-audit *before* implementation; verdicts cite `file:key=value`; blame our own code before the finding |
-| **writer** | outline, LaTeX, figures, compile | context-isolated: sees only `claims/` + `NARRATIVE.md`; numbers copied, never remembered |
-| **presenter** | paper-study decks (reverse-learning), progress decks, talk slides | figures are PDF screenshots, never redrawn; judgment slides (limitations/conclusions) left blank — **no ghostwriting** |
-| **steward** | handoff page, claims index, journal, graveyard | summarizes, never judges; no fabricated progress |
-| **coach** | self-improvement: mines the outcome ledger for recurring friction → proposals for CLAUDE.md / agents / templates | evidence or silence (≥2 cited entries per proposal); proposes, **never applies**; no invented metrics |
+| **scout** 🔭 | lit search · novelty checks · reference verification | zero fabrication — every citation verified live, or marked `[UNVERIFIED]` |
+| **engineer** 🔧 | implement · smoke · run · monitor · analyze | fail loud · 3 seeds · held-out always · **cannot change protocol** |
+| **auditor** 🔍 | design/experiment/paper audits · reviewer-side forensics | design-audit *before* implementation; verdicts cite `file:key=value` |
+| **writer** ✍️ | outline · LaTeX · figures · compile · snapshot drafts | context-isolated: sees only `claims/` + `NARRATIVE.md`; numbers copied, never remembered |
+| **presenter** 📽️ | paper-study decks (reverse-learning) · progress decks · talks | figures are PDF screenshots, never redrawn; judgment slides left blank — **no ghostwriting** |
+| **steward** 📋 | handoff page · growth log · Obsidian vault · naming lint | summarizes, never judges; no fabricated progress |
+| **coach** 🎯 | self-improvement from the outcome ledger | evidence or silence; proposes, **never applies**; no invented metrics |
 
-The leader stays in your main session — strategy and gate decisions need you
-anyway, and resident watcher fleets die of token cost (we tried).
+The leader stays in your main session — strategy needs you anyway, and
+resident watcher fleets die of token cost (we tried).
 
-**The fleet improves itself — with evidence.** Every agent ends every task by
-appending one honest line to `.fleet/outcomes.jsonl`: what worked, what
-fought it. The coach periodically mines that ledger (plus audit traces and
-the graveyard) and proposes upgrades to the project constitution, agent
-definitions and templates — each proposal citing the entries that motivated
-it, none applied without your approval.
-
-## The rhythm of one result
+## 🔁 The rhythm of one result
 
 ```
 prereg → design-audit → smoke → production (3 seeds) → experiment-audit
@@ -149,40 +144,66 @@ prereg → design-audit → smoke → production (3 seeds) → experiment-audit
 ```
 
 Skipping a step doesn't make the result arrive faster; it makes it arrive
-twice — the second time from a reviewer.
+twice — the second time from a reviewer. (Exploration lives in the gate-free
+`experiments/scratch/` lane; scratch numbers just can't enter claims.)
 
-## What's in the box
+## 🛡️ Why it's different
+
+1. **Two-context isolation** *(signature)* — your internal ledger
+   (`docs/findings/`) stays brutally honest; the writer is firewalled from
+   it and works only from audit-gated claims + a story contract. Honesty
+   and narrative each get a context where they can be total.
+2. **Enforcement lives in files, not vigilance** — claim upgrades require
+   an `audit_passed` marker on disk; experiments require a prereg file.
+   Rules in prose get skipped; file formats don't.
+3. **The fleet improves itself, with evidence** — every task ends with one
+   honest line in the outcome ledger; the coach mines it into proposals,
+   each citing its evidence, none applied without you.
+4. **Anti-slop by mechanism** — no ghostwritten judgments, no redrawn
+   figures, no remembered numbers, negative results kept as first-class
+   boundary statements.
+
+Independent evaluations of autonomous "AI Scientists" keep concluding they
+need the human supervision they claim to remove. ResearchFleet starts where
+those evaluations end: **supervision is the product** — we make it cheap and
+mechanical. Full failure-mode survey with sources:
+[docs/landscape.md](docs/landscape.md).
+
+## 📦 What's in the box
 
 ```
-agents/            seven agent definitions (plain Markdown)
+agents/                 seven agent definitions (plain Markdown, model-agnostic)
 skills/
-  research-init/   the /research-init scaffold + all project templates
-  shared/references/  contracts: claim schema · trace format · verdict format · run manifest ·
-                      outcome ledger · presentation · repo discipline (modules · commit flow · naming)
+  research-init/        the /research-init scaffold + all project templates
+  shared/references/    contracts: claims · traces · verdicts · run manifests ·
+                        outcome ledger · growth log · presentations ·
+                        repo discipline · Obsidian vault
 docs/
-  design.md        architecture & rationale
-  lessons.md       ★ the 15 failures this framework is made of
+  design.md             architecture & rationale (what we kept from ARIS, what we inverted)
+  lessons.md            ★ the 15 failures this framework is made of
+  landscape.md          competitive failure-mode survey + differentiation
+examples/demo-project/  a scaffolded project with a living growth tree
 ```
 
-## Status — v0.1, young and opinionated
+## 🚧 Status — v0.1, young and opinionated
 
 Honest per our own rules: the **disciplines** are distilled from a year of
 real, documented research cycles (including one full postmortem); the
-**plugin packaging itself** is new and still accumulating miles. By our own
-standard that makes the framework `indicative`, not `verified` — pilot it,
-and your `.fleet/outcomes.jsonl` plus an issue is exactly the feedback the
-coach agent was built to consume.
+**plugin packaging** is new and still accumulating miles. By our own standard
+that makes the framework `indicative`, not `verified` — pilot it, and your
+`.fleet/outcomes.jsonl` plus an issue is exactly the feedback the coach was
+built to consume. Roadmap: [ROADMAP.md](ROADMAP.md).
 
-## Lineage & credits
+## 🙏 Lineage & credits
 
 ResearchFleet is a role-based reorganization of ideas we battle-tested with
 [**ARIS**](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)
 (Auto-Research-In-Sleep, AAAI'26) and its reviewer-side dual
 [**Anti-Autoresearch**](https://github.com/wanshuiyin/Anti-Autoresearch) —
-see [docs/design.md](docs/design.md) for exactly what we kept, inverted, and
-why. If you want overnight autonomous research, use ARIS; if you want a
+see [docs/design.md](docs/design.md) for what we kept, inverted, and why.
+If you want overnight autonomous research, use ARIS; if you want a
 disciplined crew with you as PI, you're in the right repo.
 
 ## License
 
-MIT
+[MIT](LICENSE)
