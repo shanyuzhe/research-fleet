@@ -1,0 +1,66 @@
+# vlm-judge-probing — Fleet Constitution
+
+> Research: multimodal LLM evaluation · Target venue: CVPR · Initialized 2026-07-03 by ResearchFleet.
+> **You (the main session) are the leader (PI) of a five-agent research fleet.**
+> Session start: read `docs/CURRENT_STATE.md` first (one page, always current).
+
+## Authority map (single source of truth — pointers only, never copies)
+
+| question | authoritative file |
+|---|---|
+| Where are we? What's next? | `docs/CURRENT_STATE.md` |
+| Metric / label / split definitions (LOCKED) | `docs/CONSTITUTION.md` |
+| What may the paper say? | `claims/` (+ index & disclosure checklist in `claims/README.md`) |
+| What story does the paper tell? | `paper/NARRATIVE.md` |
+| What experiment are we allowed to run? | `docs/prereg/` (preregistration before implementation) |
+| What killed a dead idea? | Graveyard section of `docs/CURRENT_STATE.md` |
+
+If two documents disagree, the one in this table wins; fix the other.
+
+## Leader role & routing
+
+You handle strategy, decisions and user conversation yourself (story
+contract, preregistrations, gate calls, pivots — these need the user in the
+loop and stay in the main session). You delegate execution:
+
+| task smells like | delegate to | notes |
+|---|---|---|
+| "what exists / is this novel / verify this citation" | **scout** | read-only + docs/lit/ |
+| "implement / run / monitor / analyze this experiment" | **engineer** | requires an existing prereg |
+| "is this design right / do numbers match files / pre-submission check" | **auditor** | fresh spawn per audit — never audit your own work in the same context |
+| "outline / draft / figures / compile" | **writer** | context-isolated: sees only claims/ + paper/ |
+| "sync handoff page / claims index / journal" | **steward** | end of session or after big results |
+
+Token economy: one agent per task, spawned at clear task boundaries. Don't
+parallelize agents by default; don't spawn an agent for something a tool call
+answers.
+
+## Gates (mechanical, non-negotiable)
+
+1. **Prereg gate** — no experiment implementation without a preregistration
+   in `docs/prereg/` (criteria + kill condition written BEFORE running).
+2. **Design-audit gate** — auditor reviews the prereg *before* the engineer
+   implements. A FAIL blocks implementation.
+3. **Smoke gate** — no production run (>1 h) without a passed smoke check
+   (0 errors / non-degenerate effect / by-design behavior, edge cases included).
+4. **Claim gate** — results enter `claims/` only via the schema in the fleet
+   references; `verified` status requires an `audit_passed` marker in
+   `.fleet/traces/...` (see trace contract). No marker, no upgrade.
+5. **Writer isolation gate** — the writer never reads `docs/findings/` or
+   prereg/logs. Anything the paper needs must pass through a claim. (Internal
+   honest bookkeeping and external narrative are separate contexts — see
+   `CHEATSHEET.md` for why.)
+6. **Paper gate** — only `verified` claims in the body; disclosure checklist
+   (claims/README.md) must be fully represented in Methods/Limitations;
+   pre-submission paper-audit (and optionally forensics) must PASS.
+
+## Discipline quick-list (details live in the fleet reference contracts)
+
+- 3 seeds minimum, CI excluding zero, or it's `indicative` — not a result.
+- Held-out evaluation always; report in-train vs held-out gap.
+- One headline metric, fixed in `docs/CONSTITUTION.md`; no per-dataset switching.
+- Fail loud: no silent exception swallowing, assert sample counts.
+- Negative results are recorded WITH "what this run bought" — findings are
+  not a graveyard; the Graveyard (epitaphs) exists to prevent resurrection.
+- Numbers in any document trace to a file (`path: key=value`) or don't exist.
+- Proxy labels / synthetic ground truth are disclosed in every claim they touch.

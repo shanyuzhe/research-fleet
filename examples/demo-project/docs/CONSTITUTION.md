@@ -1,0 +1,42 @@
+# CONSTITUTION v1 — vlm-judge-probing
+
+> Status: **DRAFT** (upgrade to LOCKED when the first production run fires).
+> The constitution locks **methods and definitions**, never numbers. Once
+> LOCKED, changes require a new version (v2, v3 …) with a changelog entry —
+> silent edits to a LOCKED constitution are protocol violations.
+
+## 1. Research question (one sentence)
+
+_(multimodal LLM evaluation — state the question so that a negative answer is publishable too.)_
+
+## 2. Headline metric (single authority)
+
+- Metric: _(e.g., AUC macro-over-aspects)_ — companion metrics may be
+  reported but never substituted.
+- Evidence bar: **3 seeds, ≥2/3 with CI excluding zero**. Below the bar:
+  `indicative`, never claimed.
+
+## 3. Labels & ground truth
+
+- Source: _(human / proxy-from-model / synthetic — name it honestly)_
+- If proxy or synthetic: the disclosure sentence that MUST appear in the
+  paper's Methods, verbatim: "…"
+
+## 4. Data & splits
+
+- Datasets: _(≥2 task types recommended; single-dataset claims are fragile)_
+- Split protocol: held-out always; anything trained is evaluated cross-fit /
+  split-half on unseen items. In-train vs held-out gap is always reported.
+
+## 5. Baselines
+
+- _(list; a baseline change after LOCKED requires a version bump)_
+
+## 6. Kill conditions (project-level)
+
+- _(what result would make us stop this line? Write it now, while you can be
+  honest about it.)_
+
+## Changelog
+
+- v1 (2026-07-03): initial draft.

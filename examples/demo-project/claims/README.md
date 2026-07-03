@@ -1,0 +1,21 @@
+# Claims — vlm-judge-probing
+
+> The only interface between experiments and the paper. Schema: see the
+> ResearchFleet claim-schema contract. Status upgrades to `verified` require
+> an `audit_passed` marker in the referenced trace. Index maintained by the
+> steward.
+
+## Index
+
+| id | title | status | trace |
+|---|---|---|---|
+| _(none yet)_ | | | |
+
+## Disclosure checklist (must appear in the paper's Methods/Limitations)
+
+Every methodological caveat gets a row when it enters the project. The writer
+treats this table as mandatory paper content.
+
+| # | disclosure | introduced by | paper section |
+|---|---|---|---|
+| _(none yet)_ | | | |

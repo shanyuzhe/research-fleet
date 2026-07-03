@@ -1,0 +1,39 @@
+# {{PROJECT_NAME}} — One-page cheatsheet
+
+You talk to the **leader** (the main Claude session) in plain language. The
+leader routes work to five specialists. You never need to remember agent
+names — but here's what happens behind the curtain.
+
+## The fleet
+
+| you say | who flies | what lands |
+|---|---|---|
+| "Has anyone done X? / check these refs" | scout | `docs/lit/<topic>.md`, verified |
+| "Let's test X" | leader+you write a prereg → auditor design-checks it → engineer runs it | `docs/prereg/`, `experiments/results/<run>/` |
+| "Are these results real?" | auditor | verdict + trace in `.fleet/traces/` |
+| "Write it up" | writer (sees only verified claims) | `paper/src/` |
+| "Wrap up today" | steward | `docs/CURRENT_STATE.md` refreshed |
+
+## The five-file mental model
+
+1. `docs/CURRENT_STATE.md` — where we are. Read at every session start.
+2. `docs/CONSTITUTION.md` — locked definitions (metric, labels, splits).
+3. `docs/prereg/` — what we're allowed to run (written before running).
+4. `claims/` — what the paper is allowed to say (status-gated).
+5. `paper/NARRATIVE.md` — how the paper says it (story contract + red lines).
+
+## The one idea that pays for everything
+
+**Honest bookkeeping and external narrative are separate contexts.**
+Inside `docs/findings/` you are brutally honest: negative results, kill
+verdicts, doubts. The writer never sees that folder — it writes only from
+`claims/` (verified, with usage boundaries) and `NARRATIVE.md`. So your
+internal honesty can be total without your paper reading like an apology.
+
+## Rhythm of a result
+
+prereg → design-audit → smoke → production (3 seeds) → experiment-audit →
+claim (`under-review` → `verified` via audit marker) → paper.
+
+Skipping a step doesn't make the result arrive faster; it makes it arrive
+twice — the second time from a reviewer.

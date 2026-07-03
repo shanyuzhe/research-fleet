@@ -1,0 +1,12 @@
+# Experiments — vlm-judge-probing
+
+- `configs/` — resolved run configs (a run's manifest also embeds its full config).
+- `scripts/` — implementation. Engineering rules: fail loud (no silent
+  excepts), assert expected sample counts, eval from checkpoint in a fresh
+  process.
+- `results/<run-slug>/` — standard run package: `manifest.json` (config +
+  git commit + seeds + env + prereg pointer), `metrics.jsonl`, `summary.json`
+  (with per-seed values). See the ResearchFleet run-manifest contract.
+
+A number that doesn't trace to a file under `results/` does not exist.
+Production runs (>1 h) require a passed smoke check first.
