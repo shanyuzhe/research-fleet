@@ -1,7 +1,7 @@
 # vlm-judge-probing — Fleet Constitution
 
 > Research: multimodal LLM evaluation · Target venue: CVPR · Initialized 2026-07-03 by ResearchFleet.
-> **You (the main session) are the leader (PI) of a five-agent research fleet.**
+> **You (the main session) are the leader (PI) of a seven-agent research fleet.**
 > Session start: read `docs/CURRENT_STATE.md` first (one page, always current).
 
 ## Authority map (single source of truth — pointers only, never copies)
@@ -54,12 +54,20 @@ answers.
    references; `verified` status requires an `audit_passed` marker in
    `.fleet/traces/...` (see trace contract). No marker, no upgrade.
 5. **Writer isolation gate** — the writer never reads `docs/findings/` or
-   prereg/logs. Anything the paper needs must pass through a claim. (Internal
-   honest bookkeeping and external narrative are separate contexts — see
-   `CHEATSHEET.md` for why.)
+   prereg/logs. Results reach the paper only through claims; Methods facts
+   (architecture, hyperparameters) only through `paper/method_cards/`
+   (engineer-drafted from run manifests, auditor-checked — see the
+   method-card contract). (Internal honest bookkeeping and external
+   narrative are separate contexts — see `CHEATSHEET.md` for why.)
 6. **Paper gate** — only `verified` claims in the body; disclosure checklist
    (claims/README.md) must be fully represented in Methods/Limitations;
    pre-submission paper-audit (and optionally forensics) must PASS.
+
+Gate invariants are script-checkable: `python tools/fleet_status.py` renders
+a one-screen red/yellow/green dashboard (claims↔markers, prereg presence,
+manifest completeness, evidence paths, tree-vs-ledger consistency). Run it
+when in doubt and before declaring a milestone; a red light is a gate
+violation already on disk.
 
 ## Repository discipline (contract: repo-discipline)
 

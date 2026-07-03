@@ -8,7 +8,7 @@ description: One-command initialization of a disciplined ML research project —
 You are initializing a research project governed by the ResearchFleet
 discipline system. The result: a directory skeleton + a project CLAUDE.md that
 turns the main session into the fleet **leader** (PI), routing work to the
-five agents (scout, engineer, auditor, writer, steward).
+seven agents (scout, engineer, auditor, writer, presenter, steward, coach).
 
 ## Step 1 — Gather three answers
 
@@ -52,6 +52,7 @@ every template):
 │   └── README.md                 ← templates/claims-README.md.template
 ├── paper/
 │   ├── NARRATIVE.md              ← templates/NARRATIVE.md.template
+│   ├── method_cards/             (empty — Methods facts channel, see method-card contract)
 │   └── src/                      (empty, writer writes here)
 ├── presentations/
 │   └── STYLE.md                  ← templates/STYLE.md.template  (deck theme + presenter identity)
@@ -67,10 +68,12 @@ every template):
 │   ├── 00_MOC.md                 ← templates/notes-MOC.md.template
 │   └── daily/  lines/  concepts/  papers/   (empty dirs)
 ├── tools/
-│   └── growth_tree.py            ← templates/growth_tree.py  (copied verbatim — tree renderer)
+│   ├── growth_tree.py            ← templates/growth_tree.py  (copied verbatim — tree renderer)
+│   └── fleet_status.py           ← templates/fleet_status.py (copied verbatim — gate-invariant checker)
 └── .fleet/
     ├── outcomes.jsonl            (create empty — the outcome ledger, see fleet references)
     ├── growth.jsonl              (create empty — the growth log, see fleet references)
+    ├── contracts/                ← copy of ALL skills/shared/references/*.md (see below)
     └── traces/
         └── README.md             ← templates/traces-README.md.template
 ```
@@ -80,6 +83,30 @@ improvement reports there and the steward renders `tree.html` there.
 
 Template files live in this skill's `templates/` directory
 (`${CLAUDE_PLUGIN_ROOT}/skills/research-init/templates/`).
+
+**Pin the contracts into the project**: copy every file from
+`${CLAUDE_PLUGIN_ROOT}/skills/shared/references/` into `.fleet/contracts/`,
+verbatim. Agents resolve contracts from `.fleet/contracts/` first and fall
+back to the plugin root — so projects survive plugin-path changes, and a
+plugin upgrade becomes an explicit, reviewable diff of `.fleet/contracts/`
+instead of a silent behavior change.
+
+## Step 3b — `--minimal` variant (solo / side projects)
+
+If the user passed `--minimal` (or asks for the lightweight setup), keep
+**all six gates** — discipline is the product; ceremony is not — and cut
+only the ceremony:
+
+- **Scaffold**: skip `presentations/` and `notes/` entirely; skip
+  `docs/journal/` (daily notes fold into `docs/CURRENT_STATE.md`).
+- **Routing table**: in the generated CLAUDE.md, comment out the presenter
+  and coach rows (`<!-- enable when needed: ... -->`) — the agent files ship
+  with the plugin either way, so re-enabling is a one-line uncomment.
+- **Prereg template**: instead of the full template, write
+  `docs/prereg/_TEMPLATE.md` with only the five required fields:
+  question · operationalization · success criteria · kill condition · seeds.
+- Everything else (claims, traces, contracts, fleet_status, growth log)
+  stays — those are the gates' load-bearing files, not ceremony.
 
 ## Step 4 — Git
 
