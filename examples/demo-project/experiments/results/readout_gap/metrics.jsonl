@@ -1,0 +1,3 @@
+{"seed": 0, "step": "final", "read_auc": 0.788, "write_auc": 0.638}
+{"seed": 1, "step": "final", "read_auc": 0.795, "write_auc": 0.644}
+{"seed": 2, "step": "final", "read_auc": 0.793, "write_auc": 0.641}

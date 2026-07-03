@@ -1,0 +1,22 @@
+{
+  "run_slug": "readout_gap",
+  "date": "2026-06-20",
+  "git_commit": "a1b2c3d4e5f60718293a4b5c6d7e8f9012345678",
+  "config": {
+    "task": "readout_gap",
+    "model": "small-vlm-frozen",
+    "probe": "linear",
+    "hidden": "late_layers_mean_pool",
+    "eval": "cross_fit",
+    "metric": "macro_over_aspect_auc",
+    "datasets": ["ds_a", "ds_b", "ds_c"]
+  },
+  "seeds": [0, 1, 2],
+  "env": {
+    "gpu": "1x demo-gpu",
+    "python": "3.11",
+    "key_libs": {"numpy": "1.26", "torch": "2.3"}
+  },
+  "prereg": "docs/prereg/readout_gap.md",
+  "smoke_passed": true
+}

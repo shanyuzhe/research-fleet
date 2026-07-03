@@ -1,0 +1,9 @@
+{
+  "run_slug": "readout_gap",
+  "metric": "macro_over_aspect_auc",
+  "read_path": {"mean": 0.792, "per_seed": [0.788, 0.795, 0.793]},
+  "write_path": {"mean": 0.641, "per_seed": [0.638, 0.644, 0.641]},
+  "delta_read_minus_write": {"mean": 0.151, "ci95": [0.132, 0.170], "datasets_clearing": "3/3"},
+  "random_coupling_control": {"delta_mean": 0.004, "ci95": [-0.011, 0.019]},
+  "held_out_gap": {"in_train_auc": 0.804, "held_out_auc": 0.792}
+}

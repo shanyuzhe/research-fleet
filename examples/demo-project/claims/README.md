@@ -9,7 +9,7 @@
 
 | id | title | status | trace |
 |---|---|---|---|
-| _(none yet)_ | | | |
+| C3_readout_gap | Probe read path beats distilled decoding by +0.151 AUC (3/3) | verified | .fleet/traces/experiment-audit/readout-gap/2026-06-28_run01/ |
 
 ## Disclosure checklist (must appear in the paper's Methods/Limitations)
 
@@ -18,4 +18,4 @@ treats this table as mandatory paper content.
 
 | # | disclosure | introduced by | paper section |
 |---|---|---|---|
-| _(none yet)_ | | | |
+| 1 | Judge labels are a synthetic proxy (single large-model scoring), not human ground truth | C3_readout_gap | Methods / Limitations |
