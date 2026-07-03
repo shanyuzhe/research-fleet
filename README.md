@@ -2,7 +2,7 @@
 
 > **Spawn your research crew in one command.**
 > A Claude Code plugin that scaffolds a disciplined ML research project and
-> staffs it with a six-agent team — led by your main session as PI.
+> staffs it with a seven-agent team — led by your main session as PI.
 >
 > *a.k.a. **The PI Simulator** — every grad student deserves to know what
 > running a lab feels like. Your crew never sleeps, never sulks, and never
@@ -17,8 +17,8 @@
 - 📁 A **research project skeleton** — code, paper and experiment assets with
   single-source-of-truth wiring (constitution, preregistrations, claims,
   audit traces, handoff page)
-- 🧑‍🔬 A **six-agent fleet** — scout, engineer, auditor, writer, presenter,
-  steward — each a specialist with hard rules and forbidden zones
+- 🧑‍🔬 A **seven-agent fleet** — scout, engineer, auditor, writer, presenter,
+  steward, coach — each a specialist with hard rules and forbidden zones
 - 🧭 A **leader constitution** (project `CLAUDE.md`) that turns your main
   Claude session into the PI: it routes work to the fleet, you just talk to it
 
@@ -89,12 +89,15 @@ flowchart TD
     L --> W[writer ✍️<br/>outline · LaTeX · figures]
     L --> P[presenter 📽️<br/>paper-study · progress · talk decks]
     L --> ST[steward 📋<br/>handoff page · claims index · journal]
+    L --> C[coach 🎯<br/>mines outcomes → fleet upgrades]
     S --> lit[(docs/lit)]
     E --> res[(experiments/results)]
     A --> tr[(.fleet/traces + markers)]
     W --> paper[(paper/)]
     P --> decks[(presentations/)]
     ST --> cs[(docs/CURRENT_STATE.md)]
+    ol[(.fleet/outcomes.jsonl<br/>one honest line per task, all agents)] --> C
+    C --> fi[(docs/fleet/ improvement proposals)]
     cl[(claims/ — the only door<br/>between findings and paper)] --> W
     tr -- audit_passed unlocks --> cl
 ```
@@ -107,9 +110,17 @@ flowchart TD
 | **writer** | outline, LaTeX, figures, compile | context-isolated: sees only `claims/` + `NARRATIVE.md`; numbers copied, never remembered |
 | **presenter** | paper-study decks (reverse-learning), progress decks, talk slides | figures are PDF screenshots, never redrawn; judgment slides (limitations/conclusions) left blank — **no ghostwriting** |
 | **steward** | handoff page, claims index, journal, graveyard | summarizes, never judges; no fabricated progress |
+| **coach** | self-improvement: mines the outcome ledger for recurring friction → proposals for CLAUDE.md / agents / templates | evidence or silence (≥2 cited entries per proposal); proposes, **never applies**; no invented metrics |
 
 The leader stays in your main session — strategy and gate decisions need you
 anyway, and resident watcher fleets die of token cost (we tried).
+
+**The fleet improves itself — with evidence.** Every agent ends every task by
+appending one honest line to `.fleet/outcomes.jsonl`: what worked, what
+fought it. The coach periodically mines that ledger (plus audit traces and
+the graveyard) and proposes upgrades to the project constitution, agent
+definitions and templates — each proposal citing the entries that motivated
+it, none applied without your approval.
 
 ## The rhythm of one result
 
@@ -124,7 +135,7 @@ twice — the second time from a reviewer.
 ## What's in the box
 
 ```
-agents/            six agent definitions (plain Markdown)
+agents/            seven agent definitions (plain Markdown)
 skills/
   research-init/   the /research-init scaffold + all project templates
   shared/references/  contracts: claim schema · trace format · verdict format · run manifest

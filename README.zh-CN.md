@@ -1,7 +1,7 @@
 # ResearchFleet ⛵
 
 > **一条命令，组建你的科研团队。**
-> Claude Code 插件：一键初始化结构化科研项目（代码+论文+实验资产），同时配齐一支六人 agent 军团——你的主会话就是 PI（leader）。
+> Claude Code 插件：一键初始化结构化科研项目（代码+论文+实验资产），同时配齐一支七人 agent 军团——你的主会话就是 PI（leader）。
 >
 > *又名 **PI 模拟器**：让每个研究生都能体验一把当 PI 的感觉——你的组员不睡觉、不闹情绪、没有审计 trace 绝不敢报结果。*
 
@@ -12,7 +12,7 @@
 **一条 `/research-init`** 给你：
 
 - 📁 **科研项目骨架**——宪法（口径锁定）、预注册、claim 文件、审计 trace、交接页，全部单一权威源接线
-- 🧑‍🔬 **六 agent 军团**——scout（文献）/ engineer（实验）/ auditor（审计）/ writer（写作）/ presenter（汇报）/ steward（管家），各有硬规则和禁区
+- 🧑‍🔬 **七 agent 军团**——scout（文献）/ engineer（实验）/ auditor（审计）/ writer（写作）/ presenter（汇报）/ steward（管家）/ coach（自我改进），各有硬规则和禁区
 - 🧭 **Leader 宪法**（项目 CLAUDE.md）——主会话自动成为 PI，负责路由调度；你只需要说人话
 
 框架的每一个机制都来自一整年 LLM-agent 科研的真实血泪——一次 borderline-reject 的完整复盘 + 一次成功投稿的实战沉淀（**[docs/lessons.md](docs/lessons.md)**：15 个踩坑 → 15 个机制）。
@@ -61,8 +61,11 @@ claude
 | **writer** ✍️ | 大纲、LaTeX、图表、编译 | 上下文隔离：只读 `claims/` + `NARRATIVE.md`；数字只复制、不凭记忆 |
 | **presenter** 📽️ | 论文精读 deck（反向学习法）、进展汇报、会议 talk | 图必来自 PDF 截图禁 AI 重绘；局限/总结等判断页**留白不代笔**；盲点记 confusion.md 回流成研究问题 |
 | **steward** 📋 | 交接页、claim 索引、journal、墓地 | 只总结不判定；无进展如实写无进展 |
+| **coach** 🎯 | 自我改进：挖 outcome 账本里的反复摩擦 → 对 CLAUDE.md/agent/模板的改进提案 | 每条提案必须引 ≥2 条账本证据；**只提案不擅改**；禁编造指标 |
 
 Leader 不做成 agent——战略与 gate 决策本来就需要你在场，而常驻监工 agent 会死于 token 成本（我们试过）。
+
+**军团会带证据地自我进化。** 每个 agent 结束任务时往 `.fleet/outcomes.jsonl` 追加一行诚实记录：什么起了作用、什么在拖后腿。coach 定期挖这本账（连同审计 trace 和墓地），对项目宪法、agent 定义、模板提出升级提案——每条提案引用触发它的账本条目，未经你批准一条也不落地。
 
 ## 一个结果的完整节奏
 

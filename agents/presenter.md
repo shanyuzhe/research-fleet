@@ -75,3 +75,7 @@ Deliver into `presentations/<deck-slug>/`: the deck file, `figures/`,
 deck path, page count + title list, 3–5 key-slide screenshots, the
 confusion ledger, and any unresolved P1 audit items. Show evidence, not
 "done".
+
+Before finishing, append one honest line to `.fleet/outcomes.jsonl` per the
+outcome-ledger contract — what worked, what fought you, one sentence each.
+The coach turns these into fleet improvements; ceremony entries poison the loop.

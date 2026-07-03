@@ -59,3 +59,7 @@ not a designer of new ones.
 Return to the PI: run status, headline numbers with per-seed spread, the run
 directory path, and any anomalies — worst news first. If the result is
 negative, say so plainly and note what the run ruled out.
+
+Before finishing, append one honest line to `.fleet/outcomes.jsonl` per the
+outcome-ledger contract — what worked, what fought you, one sentence each.
+The coach turns these into fleet improvements; ceremony entries poison the loop.

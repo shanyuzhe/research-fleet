@@ -14,6 +14,7 @@ names — but here's what happens behind the curtain.
 | "Write it up" | writer (sees only verified claims) | `paper/src/` |
 | "Make the journal-club / progress deck" | presenter | `presentations/<deck>/` + confusion ledger (your reading list) |
 | "Wrap up today" | steward | `docs/CURRENT_STATE.md` refreshed |
+| "Make the team better" | coach | `docs/fleet/improvement_<date>.md` — evidence-based proposals from `.fleet/outcomes.jsonl` |
 
 ## The five-file mental model
 

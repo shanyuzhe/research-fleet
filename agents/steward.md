@@ -44,3 +44,7 @@ anything.
 Return to the PI: what you updated, anything inconsistent you found while
 syncing (stale claims, missing traces, runs with no manifest), and any
 in-flight item that looks stuck (>7 days without movement).
+
+Before finishing, append one honest line to `.fleet/outcomes.jsonl` per the
+outcome-ledger contract — what worked, what fought you, one sentence each.
+The coach turns these into fleet improvements; ceremony entries poison the loop.

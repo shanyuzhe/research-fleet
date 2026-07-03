@@ -3,7 +3,11 @@
 ## v0.1 (current) — MVP
 
 - [x] `/research-init` one-command project scaffold
-- [x] Six-agent fleet: scout / engineer / auditor / writer / presenter / steward
+- [x] Seven-agent fleet: scout / engineer / auditor / writer / presenter /
+      steward / coach
+- [x] Self-improvement loop: per-task outcome ledger (`.fleet/outcomes.jsonl`,
+      one honest line per finished task) → coach mines it into evidence-cited
+      proposals for CLAUDE.md / agents / templates (propose-only)
 - [x] presenter: reverse-learning paper decks (confusion ledger), progress
       decks from claims, talk decks; zero-hallucination visuals +
       no-ghostwriting judgment slides (presentation-contract)
@@ -36,7 +40,7 @@
 - [ ] `examples/` gallery: an initialized project with one full
       prereg → run → audit → claim → paper cycle walked through
 - [ ] Template variants per venue (rebuttal norms, page budgets)
-- [ ] Fleet self-review: monthly meta-pass over traces to spot dormant
-      agents, missing gates, new failure modes
+- [ ] Scheduled coach runs (cron) + cross-project ledger aggregation, so
+      improvements learned in one project propose upstream plugin changes
 
 Suggestions welcome — see CONTRIBUTING.md.

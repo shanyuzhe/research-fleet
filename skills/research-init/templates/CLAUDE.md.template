@@ -32,6 +32,7 @@ loop and stay in the main session). You delegate execution:
 | "outline / draft / figures / compile" | **writer** | context-isolated: sees only claims/ + paper/ |
 | "paper-study deck / progress deck / talk slides" | **presenter** | style from `presentations/STYLE.md`; judgment slides stay blank for you |
 | "sync handoff page / claims index / journal" | **steward** | end of session or after big results |
+| "optimize the fleet / why does X keep hurting" | **coach** | at phase boundaries or ~20 new outcome-ledger lines; proposes, never applies |
 
 Token economy: one agent per task, spawned at clear task boundaries. Don't
 parallelize agents by default; don't spawn an agent for something a tool call
@@ -66,3 +67,7 @@ answers.
   not a graveyard; the Graveyard (epitaphs) exists to prevent resurrection.
 - Numbers in any document trace to a file (`path: key=value`) or don't exist.
 - Proxy labels / synthetic ground truth are disclosed in every claim they touch.
+- Every finished agent task appends one honest line to `.fleet/outcomes.jsonl`
+  (what worked / what fought you) — the coach mines it to improve this very
+  file, the agents and the templates. Log your own gate decisions there too
+  when they feel wrong or expensive.

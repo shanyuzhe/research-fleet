@@ -61,9 +61,13 @@ every template):
 │   ├── scripts/
 │   └── results/
 └── .fleet/
+    ├── outcomes.jsonl            (create empty — the outcome ledger, see fleet references)
     └── traces/
         └── README.md             ← templates/traces-README.md.template
 ```
+
+Also create the (empty) `docs/fleet/` directory — the coach agent writes
+improvement reports there.
 
 Template files live in this skill's `templates/` directory
 (`${CLAUDE_PLUGIN_ROOT}/skills/research-init/templates/`).

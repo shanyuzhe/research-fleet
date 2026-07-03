@@ -53,3 +53,7 @@ paper prose.
 Write findings to `docs/lit/<topic-slug>.md` with a `verified: <date>` header,
 and return a short summary to the PI: verdict first, then the 3–5 load-bearing
 papers, then open questions. Never dump raw search results.
+
+Before finishing, append one honest line to `.fleet/outcomes.jsonl` per the
+outcome-ledger contract — what worked, what fought you, one sentence each.
+The coach turns these into fleet improvements; ceremony entries poison the loop.

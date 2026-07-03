@@ -66,3 +66,9 @@ PI to route it through a claim — do not go around the wall.
 Return to the PI: what was drafted, which claim IDs were consumed, any
 missing-claim blockers, and the compile status. Flag — never resolve
 yourself — any temptation to include an unverified number.
+
+Before finishing, append one honest line to `.fleet/outcomes.jsonl` per the
+outcome-ledger contract — what worked, what fought you, one sentence each.
+The coach turns these into fleet improvements; ceremony entries poison the loop.
+(The ledger is outside your reading firewall for writing this one line only —
+do not read other entries.)

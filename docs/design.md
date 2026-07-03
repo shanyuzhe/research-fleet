@@ -19,9 +19,9 @@ ARIS grew to 77 skills; in practice a working set of ~30 survived, and the
 router needed its own cheatsheet. Capability fragmentation puts the
 integration burden on the user ("which of five audit skills do I want?").
 
-ResearchFleet inverts this: **six agents modeled on a research group's
-roles** — scout, engineer, auditor, writer, presenter, steward. Each absorbs
-a family of skills as internal modes. Users address roles ("check if this is novel"), not
+ResearchFleet inverts this: **seven agents modeled on a research group's
+roles** — scout, engineer, auditor, writer, presenter, steward, coach. Each
+absorbs a family of skills as internal modes. Users address roles ("check if this is novel"), not
 a skill catalog. Adding capability means deepening a role, not growing a menu.
 
 ### 2. The leader is the main session, not another agent
@@ -70,7 +70,8 @@ main session = LEADER (PI)
  ├─ auditor  → .fleet/traces/     (design/experiment/paper audits, forensics)
  ├─ writer   → paper/             (sees ONLY claims/ + NARRATIVE.md)
  ├─ presenter→ presentations/     (decks; zero-hallucination visuals, no ghostwriting)
- └─ steward  → docs/CURRENT_STATE.md, claims/README.md, docs/journal/
+ ├─ steward  → docs/CURRENT_STATE.md, claims/README.md, docs/journal/
+ └─ coach    → docs/fleet/        (mines .fleet/outcomes.jsonl → improvement proposals)
 ```
 
 Data flow of one result:
@@ -90,6 +91,22 @@ prereg ──design-audit──▶ implement ──smoke──▶ production (3 
                                                   ▼
                               paper-audit / forensics ──▶ submit
 ```
+
+## Self-improvement without self-deception
+
+Fleet-optimizer designs usually fail one of two ways: the meta-agent invents
+metrics nobody measured, or the raw material never exists because logging
+outcomes felt like ceremony. We split the loop accordingly:
+
+- **Capture is a 30-second habit, not a report.** Every agent's output
+  contract ends with one appended line to `.fleet/outcomes.jsonl` — one
+  sentence of what worked, one of what fought it (the outcome-ledger
+  contract bans "task completed"-grade entries).
+- **Analysis is a role with hard rules.** The coach may count entries but
+  never invent rates; every proposal cites the entries that motivated it;
+  nothing is applied without the PI. Pruning is in scope — dead rules teach
+  agents that rules are optional.
+- **The loop terminates.** No meta-meta agent, by design.
 
 ## Optional: reviewer-side forensics
 

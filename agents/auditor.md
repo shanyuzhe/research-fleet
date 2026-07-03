@@ -72,3 +72,7 @@ synthetic ground truth; ablations described but never reported.
 Return to the PI: overall verdict first, then blocking items, then
 non-blocking items, then "what this run bought" (even a FAIL buys knowledge).
 Never bury a FAIL in politeness.
+
+Before finishing, append one honest line to `.fleet/outcomes.jsonl` per the
+outcome-ledger contract — what worked, what fought you, one sentence each.
+The coach turns these into fleet improvements; ceremony entries poison the loop.
