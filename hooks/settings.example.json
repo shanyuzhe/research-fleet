@@ -1,0 +1,36 @@
+{
+  "$comment": "ResearchFleet optional hooks — copy the entries you want into your project's .claude/settings.json (or settings.local.json). Replace <FLEET_HOOKS> with the absolute path to your clone's hooks/ directory. All hooks fail open: a hook error never bricks the session.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python <FLEET_HOOKS>/claim_gate.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python <FLEET_HOOKS>/stop_status.py"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python <FLEET_HOOKS>/session_gates.py"
+          }
+        ]
+      }
+    ]
+  }
+}
