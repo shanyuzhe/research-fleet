@@ -1,5 +1,7 @@
 # Run Manifest — standard experiment run package
 
+> contract-version: 0.2
+
 Every experiment run produces a self-describing directory. If a number cannot
 be traced back to one of these, it does not exist.
 

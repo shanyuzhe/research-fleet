@@ -1,5 +1,7 @@
 # Verdict Format — structured audit output
 
+> contract-version: 0.2
+
 Every audit verdict (`verdict.md` inside a trace directory) uses this exact
 structure. Free-form verdicts are not verdicts.
 
@@ -9,6 +11,7 @@ structure. Free-form verdicts are not verdicts.
 Subject: <what was audited, one line>
 Scope: <design-level | execution-level | paper-level | forensics>
 Date / run: <YYYY-MM-DD>_runNN
+Reviewers: <single-model | cross-model (see cross_review.md)>
 
 ## Scope verdicts
 

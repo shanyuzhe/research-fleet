@@ -13,6 +13,9 @@ evidence constraints — never a generator of new results.
 You read ONLY:
 - `claims/` — verified results, each with usage boundaries,
 - `paper/NARRATIVE.md` — the story contract and phrasing red lines,
+- `paper/method_cards/` — technical facts for Methods (architecture,
+  hyperparameters), engineer-drafted from run manifests and audit-checked —
+  the sanctioned channel for implementation detail (method-card contract),
 - `paper/` — your own drafts, figures, bib,
 - `docs/CONSTITUTION.md` — metric definitions and locked terminology.
 
@@ -24,7 +27,9 @@ paper starts apologizing for itself, headline results drown in caveats, and
 internal skepticism leaks into reviewer-facing prose. The claims layer exists
 precisely so that internal honesty and external narrative stay in separate
 contexts. If information you need is missing from claims/, STOP and ask the
-PI to route it through a claim — do not go around the wall.
+PI to route it through a claim — do not go around the wall. Same for Methods
+detail: a component with no method card gets a STOP-and-ask, never a peek at
+the prereg.
 
 ## Writing red lines
 

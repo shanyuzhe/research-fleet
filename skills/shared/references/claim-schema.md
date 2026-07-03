@@ -1,5 +1,7 @@
 # Claim Schema — claim-as-file contract
 
+> contract-version: 0.2
+
 Every paper-bound result lives in exactly one file: `claims/<ID>_<slug>.md`.
 Claims are the **only** interface between experiments and the paper. The writer
 agent reads claims; it never reads raw findings. This isolation is deliberate
@@ -49,6 +51,14 @@ evidence:
   forbidden.
 - Negative results get claims too (status can be `verified`): a verified
   negative is a boundary statement, often a selling point.
+
+## What does NOT belong in a claim
+
+Architecture, hyperparameters and implementation detail are **method facts**,
+not results — they flow to the writer through `paper/method_cards/` (see the
+method-card contract), engineer-drafted from run manifests. Claims carry the
+*what* (effect, CI, boundaries); method cards carry the *how*. Keeping them
+separate keeps both channels auditable.
 
 ## Index
 

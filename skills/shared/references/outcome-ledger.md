@@ -1,5 +1,7 @@
 # Outcome Ledger — one honest line per finished task
 
+> contract-version: 0.2
+
 `.fleet/outcomes.jsonl` — append-only, one JSON object per completed agent
 task. This is the raw material of the fleet's self-improvement loop: the
 coach agent mines it for recurring friction and turns patterns into

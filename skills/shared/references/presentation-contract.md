@@ -1,5 +1,7 @@
 # Presentation Contract — decks that survive a hostile audience
 
+> contract-version: 0.2
+
 Governs the presenter agent. Distilled from a battle-tested paper-study
 pipeline ("reverse-learning method") and its accumulated pitfall list.
 
@@ -75,10 +77,15 @@ from PDF) → §5 judgment slides (BLANK) → closing.
    relationship removal; template-bundled logos must be replaced with the
    STYLE.md logo; layouts without placeholders need absolute-positioned
    text boxes. On Windows, kill any open PowerPoint process before writing,
-   and export via COM with `-NoProfile` (or the PowerShell tool directly).
-5. **Self-review** — render all slides to PNG; compare key slides against
-   the reference deck named in STYLE.md; verify digits, source footers,
-   no literal `**` markdown residue, no stretched images.
+   and export via a PowerShell COM script run with `-NoProfile`.
+5. **Self-review, tiered** — rendering every slide to PNG on every round is
+   the kind of cost that gets the whole review step skipped under pressure,
+   so tier it: **full render** on the first complete build (it becomes the
+   visual reference) and on final delivery; **intermediate rounds render
+   only the 5 key slides** (cover, TOC, one section divider, one content
+   slide, one judgment slide). Whatever is rendered gets the same checks:
+   compare against the reference deck named in STYLE.md; verify digits,
+   source footers, no literal `**` markdown residue, no stretched images.
 6. **Reviewer audit** (below), then deliver with evidence.
 
 ## Reviewer audit checklist

@@ -1,5 +1,7 @@
 # Trace Format — audit evidence on disk
 
+> contract-version: 0.2
+
 Every audit writes a trace, **regardless of verdict**. Traces are permanent;
 they are never garbage-collected. A verdict that isn't on disk didn't happen.
 
@@ -10,6 +12,8 @@ they are never garbage-collected. A verdict that isn't on disk didn't happen.
 ├── prompt.md        # exactly what the auditor was asked, incl. file paths given
 ├── log.md           # working notes / raw output of the audit run
 ├── verdict.md       # structured verdict (see verdict-format.md)
+├── cross_review.md  # OPTIONAL — second-model review exchange (brief, response,
+│                    #   agreement table); present only on cross-model audits
 └── audit_passed     # empty marker file — ONLY written on full PASS
 ```
 

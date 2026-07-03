@@ -1,5 +1,7 @@
 # Growth Log — the tree's data spine
 
+> contract-version: 0.2
+
 `.fleet/growth.jsonl` — append-only, one snapshot per steward sync (or
 whenever any line of work changes stage). Cheap capture at write time buys
 free reconstruction at render time: the animated tree, the Growth view

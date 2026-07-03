@@ -1,5 +1,7 @@
 # Obsidian Notes — the researcher's learning vault
 
+> contract-version: 0.2
+
 `notes/` is an Obsidian-ready folder (open it as a vault, or add the project
 to an existing vault). It exists for **the human's learning**: the project's
 threads become a linked knowledge web, reviewed daily. The steward generates

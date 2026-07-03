@@ -1,5 +1,7 @@
 # Repo Discipline — module structure, commit flow, naming
 
+> contract-version: 0.2
+
 Three habits that keep a research repository readable a year later. The
 leader owns the commit flow; the engineer owns code placement; the steward
 lints naming.
