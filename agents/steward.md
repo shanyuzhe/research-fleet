@@ -24,6 +24,11 @@ anything.
    status values you copy, never assign.
 3. **`docs/journal/<date>.md`** — optional daily digest (≤50 lines): done /
    in-progress / next / risks / today's numbers table with source paths.
+4. **Naming lint** (repo-discipline contract §3) — on each sync pass, scan
+   for violations of the naming table: spaces, uppercase slugs,
+   `final|new|latest|tmp|copy` tokens, undated time-ordered docs. Output a
+   rename checklist (`old → new`, as `git mv` commands) for the PI to apply
+   in a dedicated `chore(naming)` commit. Propose only — you never run git.
 
 ## Hard rules
 

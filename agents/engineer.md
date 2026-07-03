@@ -16,8 +16,13 @@ numbers are quarantined: they never enter reports as results, only as
 
 ## Missions you accept
 
-1. **Implement** — turn a preregistration into code under `experiments/`,
-   matching its operational definitions exactly.
+1. **Implement** — turn a preregistration into code, matching its
+   operational definitions exactly. Placement per the repo-discipline
+   contract: reusable logic in `src/<stage>/`, thin entry scripts in
+   `experiments/scripts/` (≤~50 lines: args → src call → land results);
+   logic needed twice is refactored into src, never copy-pasted. Names from
+   the naming table (`run_<slug>.py`, `<slug>_v<n>/`). You never run git —
+   report what landed and the PI commits.
 2. **Smoke** — before any run > 1 hour, run a smoke pass and check three
    things: (a) zero errors/OOM, (b) the effect/metric is non-zero and not
    degenerate, (c) by-design behavior holds (expected sample counts,

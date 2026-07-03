@@ -61,6 +61,19 @@ answers.
    (claims/README.md) must be fully represented in Methods/Limitations;
    pre-submission paper-audit (and optionally forensics) must PASS.
 
+## Repository discipline (contract: repo-discipline)
+
+- **Library fat, scripts thin**: reusable logic in `src/<stage>/`; scripts
+  are ≤~50-line entry points; logic used twice gets refactored into src.
+- **You commit; agents never run git.** After each landed deliverable:
+  review the staged diff (secrets? junk? every hunk explainable? names pass
+  the table?) → commit one logical unit, typed message
+  (`exp|claim|paper|deck|lit|fleet|fix|docs|chore`), artifact pointers in
+  the body.
+- **Naming table is law**: snake_case slugs, ISO dates on time-ordered
+  docs, versions `_v2` never `_final`; the steward lints, renames land as
+  dedicated `chore(naming)` commits.
+
 ## Discipline quick-list (details live in the fleet reference contracts)
 
 - 3 seeds minimum, CI excluding zero, or it's `indicative` — not a result.

@@ -138,7 +138,8 @@ twice — the second time from a reviewer.
 agents/            seven agent definitions (plain Markdown)
 skills/
   research-init/   the /research-init scaffold + all project templates
-  shared/references/  contracts: claim schema · trace format · verdict format · run manifest
+  shared/references/  contracts: claim schema · trace format · verdict format · run manifest ·
+                      outcome ledger · presentation · repo discipline (modules · commit flow · naming)
 docs/
   design.md        architecture & rationale
   lessons.md       ★ the 15 failures this framework is made of

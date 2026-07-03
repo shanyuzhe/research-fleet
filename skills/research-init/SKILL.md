@@ -55,6 +55,8 @@ every template):
 │   └── src/                      (empty, writer writes here)
 ├── presentations/
 │   └── STYLE.md                  ← templates/STYLE.md.template  (deck theme + presenter identity)
+├── src/
+│   └── README.md                 ← templates/src-README.md.template  (module-first library)
 ├── experiments/
 │   ├── README.md                 ← templates/experiments-README.md.template
 │   ├── scratch/                  (gate-free exploration lane; scratch numbers never enter claims)
