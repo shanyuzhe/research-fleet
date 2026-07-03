@@ -103,9 +103,27 @@ overclaim it.
 - **P2-3 (FM7) wording** — "Status" section added to both READMEs:
   disciplines are battle-derived, the plugin itself is `indicative`.
 
-P1-1 (hook-hardened gates), P1-2 (fleet-status), P1-3 (contracts copied at
-init), P2-1 (tiered deck review), P2-2 (leader drift ping) remain proposed
-— v0.2 queue.
+## Applied (user-approved optimization plan, 2026-07-04)
+
+- **P1-1 hook-hardened gates (FM3)** — `hooks/` shipped: H1 PreToolUse
+  claim-upgrade blocker, Stop-hook red-gate reminder, SessionStart gate
+  summary. H2 (auditor-only marker writes) NOT shipped — the hook layer
+  cannot identify the calling agent; boundary documented honestly in
+  `hooks/README.md`, covered instead by fleet-status C2 + H1.
+- **P1-2 fleet-status (FM3)** — `tools/fleet_status.py` (C1–C7), copied
+  into projects at init; destructive test in `docs/fleet/`.
+- **P1-3 contracts copied at init (FM4)** — `.fleet/contracts/` +
+  contract-version headers; agents resolve project copy first.
+- **P2-1 tiered deck review (FM5)** — presentation-contract §Build
+  pipeline step 5.
+- **P2-2 leader drift ping (FM6)** — CURRENT_STATE template self-check
+  line + optional SessionStart hook.
+
+Same batch (plan items beyond this audit): five/seven agent-count drift fix
++ CI guard that counts `agents/*.md` and greps the docs, presenter illegal
+tool name fix, `commands/research-init.md` shell, method-card contract,
+cross-model audit interface, `--minimal` init variant, slug fix prep
+(plugin.json + remote URL; GitHub rename is the user's move).
 
 ## What this audit bought
 

@@ -1,6 +1,6 @@
 {
   "name": "research-fleet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Spawn your research crew in one command. Scaffolds a disciplined ML research project (code + paper + experiment assets) and staffs it with a seven-agent research team — scout, engineer, auditor, writer, presenter, steward, coach — led by your main Claude Code session acting as PI.",
   "author": {
     "name": "shanyuzhe"
