@@ -19,9 +19,9 @@ ARIS grew to 77 skills; in practice a working set of ~30 survived, and the
 router needed its own cheatsheet. Capability fragmentation puts the
 integration burden on the user ("which of five audit skills do I want?").
 
-ResearchFleet inverts this: **five agents modeled on a research group's
-roles** — scout, engineer, auditor, writer, steward. Each absorbs a family of
-skills as internal modes. Users address roles ("check if this is novel"), not
+ResearchFleet inverts this: **six agents modeled on a research group's
+roles** — scout, engineer, auditor, writer, presenter, steward. Each absorbs
+a family of skills as internal modes. Users address roles ("check if this is novel"), not
 a skill catalog. Adding capability means deepening a role, not growing a menu.
 
 ### 2. The leader is the main session, not another agent
@@ -69,6 +69,7 @@ main session = LEADER (PI)
  ├─ engineer → experiments/       (prereg-faithful runs, run manifests)
  ├─ auditor  → .fleet/traces/     (design/experiment/paper audits, forensics)
  ├─ writer   → paper/             (sees ONLY claims/ + NARRATIVE.md)
+ ├─ presenter→ presentations/     (decks; zero-hallucination visuals, no ghostwriting)
  └─ steward  → docs/CURRENT_STATE.md, claims/README.md, docs/journal/
 ```
 

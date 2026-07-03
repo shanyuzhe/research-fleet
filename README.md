@@ -2,7 +2,7 @@
 
 > **Spawn your research crew in one command.**
 > A Claude Code plugin that scaffolds a disciplined ML research project and
-> staffs it with a five-agent team — led by your main session as PI.
+> staffs it with a six-agent team — led by your main session as PI.
 >
 > *a.k.a. **The PI Simulator** — every grad student deserves to know what
 > running a lab feels like. Your crew never sleeps, never sulks, and never
@@ -17,8 +17,8 @@
 - 📁 A **research project skeleton** — code, paper and experiment assets with
   single-source-of-truth wiring (constitution, preregistrations, claims,
   audit traces, handoff page)
-- 🧑‍🔬 A **five-agent fleet** — scout, engineer, auditor, writer, steward —
-  each a specialist with hard rules and forbidden zones
+- 🧑‍🔬 A **six-agent fleet** — scout, engineer, auditor, writer, presenter,
+  steward — each a specialist with hard rules and forbidden zones
 - 🧭 A **leader constitution** (project `CLAUDE.md`) that turns your main
   Claude session into the PI: it routes work to the fleet, you just talk to it
 
@@ -87,11 +87,13 @@ flowchart TD
     L --> E[engineer 🔧<br/>implement · smoke · run · analyze]
     L --> A[auditor 🔍<br/>design & execution audits · forensics]
     L --> W[writer ✍️<br/>outline · LaTeX · figures]
+    L --> P[presenter 📽️<br/>paper-study · progress · talk decks]
     L --> ST[steward 📋<br/>handoff page · claims index · journal]
     S --> lit[(docs/lit)]
     E --> res[(experiments/results)]
     A --> tr[(.fleet/traces + markers)]
     W --> paper[(paper/)]
+    P --> decks[(presentations/)]
     ST --> cs[(docs/CURRENT_STATE.md)]
     cl[(claims/ — the only door<br/>between findings and paper)] --> W
     tr -- audit_passed unlocks --> cl
@@ -103,6 +105,7 @@ flowchart TD
 | **engineer** | implement, smoke, run, monitor, analyze | fail loud; 3 seeds; held-out always; **cannot change protocol** |
 | **auditor** | design/experiment/paper audits, reviewer-side forensics | design-audit *before* implementation; verdicts cite `file:key=value`; blame our own code before the finding |
 | **writer** | outline, LaTeX, figures, compile | context-isolated: sees only `claims/` + `NARRATIVE.md`; numbers copied, never remembered |
+| **presenter** | paper-study decks (reverse-learning), progress decks, talk slides | figures are PDF screenshots, never redrawn; judgment slides (limitations/conclusions) left blank — **no ghostwriting** |
 | **steward** | handoff page, claims index, journal, graveyard | summarizes, never judges; no fabricated progress |
 
 The leader stays in your main session — strategy and gate decisions need you
@@ -121,7 +124,7 @@ twice — the second time from a reviewer.
 ## What's in the box
 
 ```
-agents/            five agent definitions (plain Markdown)
+agents/            six agent definitions (plain Markdown)
 skills/
   research-init/   the /research-init scaffold + all project templates
   shared/references/  contracts: claim schema · trace format · verdict format · run manifest

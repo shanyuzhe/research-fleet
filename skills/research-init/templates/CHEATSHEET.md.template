@@ -12,6 +12,7 @@ names — but here's what happens behind the curtain.
 | "Let's test X" | leader+you write a prereg → auditor design-checks it → engineer runs it | `docs/prereg/`, `experiments/results/<run>/` |
 | "Are these results real?" | auditor | verdict + trace in `.fleet/traces/` |
 | "Write it up" | writer (sees only verified claims) | `paper/src/` |
+| "Make the journal-club / progress deck" | presenter | `presentations/<deck>/` + confusion ledger (your reading list) |
 | "Wrap up today" | steward | `docs/CURRENT_STATE.md` refreshed |
 
 ## The five-file mental model

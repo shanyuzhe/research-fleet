@@ -14,6 +14,7 @@
 | What story does the paper tell? | `paper/NARRATIVE.md` |
 | What experiment are we allowed to run? | `docs/prereg/` (preregistration before implementation) |
 | What killed a dead idea? | Graveyard section of `docs/CURRENT_STATE.md` |
+| How do decks look / who presents? | `presentations/STYLE.md` |
 
 If two documents disagree, the one in this table wins; fix the other.
 
@@ -29,6 +30,7 @@ loop and stay in the main session). You delegate execution:
 | "implement / run / monitor / analyze this experiment" | **engineer** | requires an existing prereg |
 | "is this design right / do numbers match files / pre-submission check" | **auditor** | fresh spawn per audit — never audit your own work in the same context |
 | "outline / draft / figures / compile" | **writer** | context-isolated: sees only claims/ + paper/ |
+| "paper-study deck / progress deck / talk slides" | **presenter** | style from `presentations/STYLE.md`; judgment slides stay blank for you |
 | "sync handoff page / claims index / journal" | **steward** | end of session or after big results |
 
 Token economy: one agent per task, spawned at clear task boundaries. Don't

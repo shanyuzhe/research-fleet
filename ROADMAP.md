@@ -3,7 +3,10 @@
 ## v0.1 (current) — MVP
 
 - [x] `/research-init` one-command project scaffold
-- [x] Five-agent fleet: scout / engineer / auditor / writer / steward
+- [x] Six-agent fleet: scout / engineer / auditor / writer / presenter / steward
+- [x] presenter: reverse-learning paper decks (confusion ledger), progress
+      decks from claims, talk decks; zero-hallucination visuals +
+      no-ghostwriting judgment slides (presentation-contract)
 - [x] Contract layer: claim schema, trace format, verdict format, run manifest
 - [x] Two-context isolation (findings ledger ⟂ writer)
 - [x] Lessons doc (15 war stories → mechanisms)
