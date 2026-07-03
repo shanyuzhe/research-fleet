@@ -28,6 +28,14 @@ experiments/results/<run-slug>/
 }
 ```
 
+## The scratch lane
+
+`experiments/scratch/` is exempt from all of this — no manifest, no prereg,
+no seed discipline. It exists so exploration has a legitimate home. The one
+hard boundary: **scratch numbers never enter a claim, a finding doc, or the
+paper.** If a scratch result looks real, it graduates by being re-run as a
+preregistered experiment with a full run package.
+
 ## Non-negotiable engineering rules (baked into the engineer agent)
 
 1. **Fail loud.** No bare `except: pass/continue`. Raise, or log

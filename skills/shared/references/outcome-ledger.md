@@ -45,3 +45,7 @@ that actually gets better.
 Every agent appends exactly one line before finishing (it's in each output
 contract). The leader may also log gate decisions that felt wrong or
 expensive — those are the highest-value entries the coach can get.
+
+**Leader backstop**: if an agent's report arrives without a ledger line, the
+leader appends one from the report's content. Capture must survive agent
+forgetfulness — a starved ledger kills the improvement loop silently.

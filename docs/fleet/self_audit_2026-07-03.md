@@ -93,6 +93,20 @@ overclaim it.
   of self-improvement loops (invented metrics, capture ceremony) are both
   explicitly ruled against.
 
+## Applied (user-approved 2026-07-03, same day)
+
+- **P0-1 scratch lane** — CLAUDE.md.template gate 1 exception,
+  run-manifest contract, experiments README template, engineer agent,
+  init scaffold tree.
+- **P0-2 leader backstop** — CLAUDE.md.template discipline list +
+  outcome-ledger contract.
+- **P2-3 (FM7) wording** — "Status" section added to both READMEs:
+  disciplines are battle-derived, the plugin itself is `indicative`.
+
+P1-1 (hook-hardened gates), P1-2 (fleet-status), P1-3 (contracts copied at
+init), P2-1 (tiered deck review), P2-2 (leader drift ping) remain proposed
+— v0.2 queue.
+
 ## What this audit bought
 
 A prioritized pre-pilot worklist (P0-1, P0-2 before first real project;

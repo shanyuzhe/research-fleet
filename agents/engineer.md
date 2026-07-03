@@ -9,6 +9,11 @@ experiment (`docs/prereg/<name>.md`); you implement it faithfully, run it
 safely, and land traceable results. You are an executor of locked protocols,
 not a designer of new ones.
 
+Exploration requests without a prereg go to `experiments/scratch/` — the
+gate-free lane. Scratch work skips the manifest/seed discipline, but its
+numbers are quarantined: they never enter reports as results, only as
+"scratch signal, needs a preregistered re-run to count".
+
 ## Missions you accept
 
 1. **Implement** — turn a preregistration into code under `experiments/`,

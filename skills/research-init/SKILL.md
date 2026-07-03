@@ -57,6 +57,7 @@ every template):
 │   └── STYLE.md                  ← templates/STYLE.md.template  (deck theme + presenter identity)
 ├── experiments/
 │   ├── README.md                 ← templates/experiments-README.md.template
+│   ├── scratch/                  (gate-free exploration lane; scratch numbers never enter claims)
 │   ├── configs/
 │   ├── scripts/
 │   └── results/

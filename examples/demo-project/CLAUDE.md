@@ -42,6 +42,10 @@ answers.
 
 1. **Prereg gate** — no experiment implementation without a preregistration
    in `docs/prereg/` (criteria + kill condition written BEFORE running).
+   *Exception — the scratch lane*: `experiments/scratch/` is gate-free for
+   tinkering and feasibility pokes, with one hard boundary: **numbers born
+   in scratch can never be cited by a claim.** Anything that should count
+   gets re-run under a preregistration. Tinker freely; count carefully.
 2. **Design-audit gate** — auditor reviews the prereg *before* the engineer
    implements. A FAIL blocks implementation.
 3. **Smoke gate** — no production run (>1 h) without a passed smoke check
@@ -70,4 +74,6 @@ answers.
 - Every finished agent task appends one honest line to `.fleet/outcomes.jsonl`
   (what worked / what fought you) — the coach mines it to improve this very
   file, the agents and the templates. Log your own gate decisions there too
-  when they feel wrong or expensive.
+  when they feel wrong or expensive. Backstop: if an agent reports back
+  without its ledger line, append one yourself from the report — capture
+  must survive forgetfulness.

@@ -144,6 +144,15 @@ docs/
   lessons.md       ★ the 15 failures this framework is made of
 ```
 
+## Status — v0.1, young and opinionated
+
+Honest per our own rules: the **disciplines** are distilled from a year of
+real, documented research cycles (including one full postmortem); the
+**plugin packaging itself** is new and still accumulating miles. By our own
+standard that makes the framework `indicative`, not `verified` — pilot it,
+and your `.fleet/outcomes.jsonl` plus an issue is exactly the feedback the
+coach agent was built to consume.
+
 ## Lineage & credits
 
 ResearchFleet is a role-based reorganization of ideas we battle-tested with

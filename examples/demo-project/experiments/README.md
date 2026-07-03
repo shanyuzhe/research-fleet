@@ -1,5 +1,8 @@
 # Experiments — vlm-judge-probing
 
+- `scratch/` — **the gate-free lane.** Tinker, poke, prototype; no prereg,
+  no manifest required. One hard boundary: numbers born here never enter a
+  claim or the paper — promising results graduate via a preregistered re-run.
 - `configs/` — resolved run configs (a run's manifest also embeds its full config).
 - `scripts/` — implementation. Engineering rules: fail loud (no silent
   excepts), assert expected sample counts, eval from checkpoint in a fresh
