@@ -21,7 +21,11 @@
 - [ ] **ablation-planner mode** for the engineer (reviewer-perspective
       ablation matrix from a verified main result)
 - [ ] Proof-checking mode for the auditor (theory papers)
-- [ ] `/fleet-status` command: one-screen gate/claim/trace dashboard
+- [ ] `/fleet-status` command: one-screen gate/claim/trace dashboard — and a
+      mechanical gate-invariant checker (markers make violations visible;
+      this makes them detectable by script)
+- [ ] `--minimal` init variant for solo/side projects (anti-rigidity: the
+      cookiecutter lesson, see docs/landscape.md §4)
 
 ## v0.3 — distribution
 

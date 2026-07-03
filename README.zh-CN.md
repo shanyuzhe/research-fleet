@@ -2,6 +2,8 @@
 
 > **一条命令，组建你的科研团队。**
 > Claude Code 插件：一键初始化结构化科研项目（代码+论文+实验资产），同时配齐一支五人 agent 军团——你的主会话就是 PI（leader）。
+>
+> *又名 **PI 模拟器**：让每个研究生都能体验一把当 PI 的感觉——你的组员不睡觉、不闹情绪、没有审计 trace 绝不敢报结果。*
 
 [English](README.md) · [中文](README.zh-CN.md) · MIT License
 
@@ -23,6 +25,12 @@ ResearchFleet 的两个回答：
 
 1. **双上下文隔离**（招牌机制）：内部账本 `docs/findings/` 保持残酷诚实；writer agent 被防火墙隔离——只能读 `claims/`（经审计门控的 verified 结果+使用边界）和叙事合同 `paper/NARRATIVE.md`。诚实与叙事各自获得一个可以彻底的上下文。
 2. **强制力活在文件里，不靠自觉**：claim 升级 `verified` 需要磁盘上的 `audit_passed` marker；跑实验需要预注册文件先存在；论文只认 verified claim。写在文档里的规则会被跳过，写进文件格式的不会。
+
+## 为什么不用全自动"AI 科学家"？
+
+对自动科学家系统（AI Scientist / Agent Laboratory 等）的独立评测反复得出同一个结论：查新流于关键词、无法批判性评估自己的结果、幻觉引用、离不开它声称要取代的人工监督。多 agent 框架则另收一笔税：约 3× 的 token 开销、聊天死循环、协调开销压过有效工作。
+
+ResearchFleet 从这些评测的结论出发：**监督本身就是产品。** 判断留给你，军团把监督变得便宜且机械化（独立敌手审计、文件级 gate、零常驻 agent 成本）。完整的竞品失败模式分析（带出处）：[docs/landscape.md](docs/landscape.md)。
 
 ## 快速开始
 

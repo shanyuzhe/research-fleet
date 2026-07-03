@@ -3,6 +3,10 @@
 > **Spawn your research crew in one command.**
 > A Claude Code plugin that scaffolds a disciplined ML research project and
 > staffs it with a five-agent team — led by your main session as PI.
+>
+> *a.k.a. **The PI Simulator** — every grad student deserves to know what
+> running a lab feels like. Your crew never sleeps, never sulks, and never
+> claims a result without an audit trail.*
 
 [English](README.md) · [中文](README.zh-CN.md) · MIT License
 
@@ -40,6 +44,20 @@ ResearchFleet's two answers:
    `audit_passed` marker on disk. Experiments require a preregistration file.
    The paper requires verified claims. Rules in prose get skipped; file
    formats don't.
+
+## Why not a fully-autonomous "AI Scientist"?
+
+Independent evaluations of autonomous-scientist systems keep reaching the
+same verdict: shallow novelty checks, no critical assessment of their own
+results, hallucinated citations, and a hard dependency on human supervision
+they claim to remove. Multi-agent frameworks add their own tax: ~3× token
+footprints, chat loops, coordination overhead.
+
+ResearchFleet starts where those evaluations end: **supervision is the
+product.** You keep the judgment calls; the fleet makes supervision cheap and
+mechanical (independent adversarial audits, file-level gates, zero standing
+agent cost). Full failure-mode analysis with sources:
+[docs/landscape.md](docs/landscape.md).
 
 ## Quickstart
 
