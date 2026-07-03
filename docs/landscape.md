@@ -70,6 +70,38 @@ earn its context cost (CONTRIBUTING rule); unused directories are safe to
 delete because contracts reference files, not the tree. A `--minimal` init
 variant is on the roadmap for solo/side projects.
 
+## Where ResearchFleet is genuinely different
+
+One line: **everyone else automates the researcher; we automate the lab's
+discipline.** The defensible mechanisms, by uniqueness:
+
+1. **Two-context isolation** (findings ledger ⟂ writer). No surveyed system
+   separates internal honest bookkeeping from external narrative — most
+   don't even have the problem because they aren't honest internally. Ours
+   encodes a real, expensive failure and cannot be trivially copied as a
+   feature bullet: it requires the claims layer, the status gate and the
+   firewall together.
+2. **Evidence-cited self-improvement** (outcome ledger + coach). Fleet
+   optimizers exist; one with a 30-second capture habit, an anti-ceremony
+   contract, a no-invented-metrics rule and propose-only output does not.
+3. **No-ghostwriting** (presenter's blank judgment slides; writer's
+   copied-never-remembered numbers). Anti-slop as a *mechanism*, not a
+   slogan — deliberately opposite to the autonomous-scientist value prop,
+   and increasingly valuable as venues tighten AI-content policies.
+4. **Negative results as first-class assets** (graveyard epitaphs,
+   "what this run bought", prereg kill conditions). Tools celebrate wins;
+   research mostly produces boundaries. We're structured around that truth.
+5. **Roles over skills, leader over orchestrator, files over watchers** —
+   each individually copyable, jointly a coherent economics: near-zero
+   standing cost, which is precisely what killed the systems in §3 and the
+   enforcement fleet we ourselves archived.
+
+What we deliberately concede: overnight autonomy (ARIS), wet-lab/theory
+fields (untested), cross-model review depth (v0.2 adapter), shipped code
+assets (deck kits, renderers — v0.2). A user who wants a paper written
+while they sleep is not our user; a user who wants to still trust their own
+paper afterwards is.
+
 ## Honest gaps (things the survey says we should worry about)
 
 1. **We are prompt-defined, not enforced by code.** A determined (or lazy)
