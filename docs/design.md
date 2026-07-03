@@ -108,6 +108,28 @@ outcomes felt like ceremony. We split the loop accordingly:
   agents that rules are optional.
 - **The loop terminates.** No meta-meta agent, by design.
 
+## The user grows too
+
+A fleet that does everything produces a spectator, and a spectator can't
+defend the paper in a Q&A. Knowledge internalization is therefore a design
+constraint, not a nice-to-have:
+
+- **Judgment is reserved for the human by contract**: research questions,
+  prereg success/kill criteria, gate calls, the story contract, judgment
+  slides, limitations — agents scaffold these, never fill them.
+- **Blind spots are surfaced, not smoothed over**: the presenter's confusion
+  ledger, placeholders for anything the source doesn't state, and audit
+  verdicts written to be read — the friction points ARE the curriculum.
+- **Progress is legible**: the Growth view in CURRENT_STATE.md shows each
+  line of work moving 🌰→🍎, and the writer's growth snapshots let the user
+  watch the paper assemble from verified claims. By the time it's "done",
+  it has been done for weeks — the final compile is a harvest, not a
+  scramble.
+
+The end state we optimize for: the user finishes the project with a working
+research system of their own — constitution, claims discipline, graveyard,
+taste — that outlives any particular tool, this one included.
+
 ## Optional: reviewer-side forensics
 
 The auditor's fourth mode reads your own draft the way

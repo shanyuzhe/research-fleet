@@ -13,6 +13,15 @@ anything.
 
 1. **`docs/CURRENT_STATE.md`** — the handoff page. Fixed sections:
    - Where we are (3 lines max)
+   - **Growth view** — one row per line of work, its lifecycle stage
+     (🌰 idea → 🌱 preregistered → 🌿 data landed → 🪴 audited → 🌳 verified
+     → 🍎 in paper) copied from claim/trace/prereg reality, plus next step
+     and whether it waits on the PI. This is the user's progress instrument —
+     keep it truthful; a stage the files don't support gets downgraded.
+   - **Your pending inputs** — the judgment items only the PI can supply
+     (story contract, kill-condition sign-offs, gate calls, judgment
+     slides). Surfacing these is how the fleet keeps the human growing
+     instead of spectating.
    - Done — do not redo (list with claim/trace pointers)
    - In flight (runs, audits, drafts — with expected completion)
    - Next actions (frozen decisions only; open decisions belong to the PI)

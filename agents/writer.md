@@ -60,6 +60,11 @@ PI to route it through a claim — do not go around the wall.
    conclude.
 4. **Compile & self-check** — build the PDF; verify abstract numbers == body
    numbers == claim numbers; flag any \cite without a bib entry for the scout.
+5. **Growth snapshot** — on request, at ANY stage: compile the current-best
+   draft from whatever claims are verified *today*, stubbing missing
+   sections with the claim IDs they're waiting for. The paper grows with
+   the project instead of being a final scramble; a snapshot is progress
+   feedback, never a submission.
 
 ## Output contract
 

@@ -26,6 +26,18 @@ Built from a year of real, painful, LLM-agent-driven research — every
 mechanism traces to a documented failure
 (**[docs/lessons.md](docs/lessons.md)**: 15 war stories → 15 mechanisms).
 
+## Philosophy: from a seed to a tree
+
+The goal isn't a PDF — it's **your own research system, grown alongside an
+agent team**. You keep every judgment call (questions, criteria, gates,
+narrative); agents tend the rest. Progress is always visible: each line of
+work moves 🌰 idea → 🌱 preregistered → 🌿 data → 🪴 audited → 🌳 verified →
+🍎 in paper on one page, and the draft assembles itself from verified claims
+as you go. Blind spots are surfaced (confusion ledgers, placeholders) rather
+than smoothed over — you finish knowing *more*, not less. By the time the
+paper is "done", it has been done for weeks: the final compile is a harvest,
+not a scramble.
+
 ## Why
 
 Agentic research tooling has a paradox: the more honestly your agents record

@@ -33,6 +33,11 @@
       this makes them detectable by script)
 - [ ] `--minimal` init variant for solo/side projects (anti-rigidity: the
       cookiecutter lesson, see docs/landscape.md §4)
+- [ ] **MCP adapters & shipped assets**: detect-and-prefer Zotero / arXiv /
+      Semantic Scholar MCP for the scout, WandB for the engineer's training
+      checks; cloud-GPU deployment recipes (Vast/Modal/AutoDL) for the
+      engineer; deck_kit.py + figure renderer shipped with the plugin;
+      pluggable completion notifications (e.g. mobile push)
 
 ## v0.3 — distribution
 

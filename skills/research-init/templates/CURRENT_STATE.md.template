@@ -8,6 +8,20 @@
 Project initialized {{DATE}}. No experiments yet. First move: novelty check +
 first preregistration.
 
+## Growth view — the tree at a glance
+
+Stages: 🌰 idea → 🌱 preregistered → 🌿 data landed → 🪴 audited → 🌳 verified claim → 🍎 in paper
+
+| line of work | stage | next step | waiting on you? |
+|---|---|---|---|
+| _(plant the first seed: a preregistration)_ | 🌰 | novelty check → prereg | — |
+
+## Your pending inputs (judgment only you can supply)
+
+- [ ] `paper/NARRATIVE.md` story contract (paper type · headline · fallbacks)
+- _(as they arise: kill-condition sign-offs, gate calls, judgment slides,
+  limitations in your own words)_
+
 ## Done — do not redo
 
 _(list items with claim/trace pointers as they land)_
