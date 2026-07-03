@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  growth-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: ASCII mode renders the demo tree
+        working-directory: examples/demo-project
+        run: |
+          python tools/growth_tree.py --ascii | tee /tmp/tree.txt
+          grep -q "readout_gap" /tmp/tree.txt
+      - name: HTML mode writes tree.html containing the slugs
+        working-directory: examples/demo-project
+        run: |
+          python tools/growth_tree.py
+          test -f docs/fleet/tree.html
+          grep -q "readout_gap" docs/fleet/tree.html
+
+  fleet-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Demo project is gate-clean (heartbeat off — demo data is frozen)
+        working-directory: examples/demo-project
+        run: python tools/fleet_status.py --no-heartbeat
+      - name: Canonical template and demo copy are byte-identical
+        run: cmp skills/research-init/templates/fleet_status.py examples/demo-project/tools/fleet_status.py
+
+  lint-agents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python tools/lint_agents.py
+
+  template-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python tools/check_templates.py
+
+  doc-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python tools/check_consistency.py
