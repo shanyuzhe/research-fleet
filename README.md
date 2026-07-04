@@ -4,6 +4,9 @@
 
 **One command gives your research project an AI team that can't cut corners on you.**
 
+*a.k.a. **The PI Simulator** — your crew never sleeps, never sulks,
+and never claims a result without an audit trail.*
+
 [![CI](https://github.com/shanyuzhe/research-fleet/actions/workflows/ci.yml/badge.svg)](https://github.com/shanyuzhe/research-fleet/actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](https://claude.com/claude-code)
@@ -79,9 +82,34 @@ claude
 `/research-init` is the only command to remember. Routing is the leader
 session's job — you make requests in whatever language you like.
 
+## 🗣️ Nine phrases are the whole interface
+
+No commands to memorize, no agent names to remember — these nine lines (or
+your own wording of them) cover everything from first idea to submission.
+**The green one matters most: no "wrap up", no vault growth.**
+
+<img src="docs/assets/phrasebook.en.svg" alt="Phrase book: you say one line, the system moves a whole chain" width="100%">
+
+<details>
+<summary>Text version (copy-paste friendly)</summary>
+
+| you say | who moves | what lands |
+|---|---|---|
+| **`"Has anyone done X?"`** | 🔭 scout, citations verified live | `docs/lit/` |
+| **`"Let's preregister X"`** | 📝 leader with you, auditor design-checks | `docs/prereg/` + audit trace |
+| **`"Implement and run it"`** | 🔧 engineer: smoke → 3 seeds | `experiments/results/` |
+| **`"Are these numbers real?"`** | 🔍 auditor, number-by-number | verdict + `audit_passed` |
+| **`"Draft the results section"`** | ✍️ writer, inside the firewall | `paper/src/` |
+| **`"Make the progress deck"`** | 📽️ presenter, judgment slides blank | `presentations/` |
+| **`"Show me the tree"`** | 🌳 growth tree | `tree.html` / terminal |
+| **`"Wrap up"`** ★ | 📋 steward harvests the day | handoff page + tree + **the whole Obsidian vault** |
+| **`"Optimize the fleet"`** | 🎯 coach, evidence-cited proposals | `docs/fleet/` proposals |
+
+</details>
+
 📖 **Want the full flow?** [docs/GUIDE.md](docs/GUIDE.md) — when each agent
-fires, the life of one research thread, the daily 10-minute ritual, and
-what the knowledge vault grows into.
+fires, the life of one research thread, the SOP map of how notes get
+generated, and the daily 10-minute ritual.
 
 ## 👥 Seven staff, one desk each
 

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 700" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="880" height="700" rx="14" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="32" y="46" font-size="21" font-weight="700" fill="#1f2328">🗣️ Phrase book — you say one line, the system moves a whole chain</text>
+  <text x="32" y="70" font-size="13" fill="#57606a">Left: you, in plain language. Right: what actually happens. These aren't commands — your own wording works; routing is the leader's job.</text>
+
+  <!-- row 1: scout -->
+  <g>
+    <rect x="28" y="94" width="252" height="36" rx="18" fill="#0969da"/>
+    <text x="154" y="118" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Has anyone done X?"</text>
+    <text x="294" y="118" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="112" font-size="14" font-weight="600" fill="#1f2328">🔭 scout flies — every citation verified live, adversarially</text>
+    <text x="322" y="130" font-size="12" fill="#57606a">lands: docs/lit/&lt;topic&gt;.md (novelty verdict: NOVEL / CROWDED / DONE)</text>
+  </g>
+  <!-- row 2: prereg -->
+  <g>
+    <rect x="28" y="152" width="252" height="36" rx="18" fill="#9a6700"/>
+    <text x="154" y="176" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Let's preregister X"</text>
+    <text x="294" y="176" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="170" font-size="14" font-weight="600" fill="#1f2328">📝 leader writes it with you — success criteria + kill condition; auditor design-checks</text>
+    <text x="322" y="188" font-size="12" fill="#57606a">lands: docs/prereg/x.md + design-audit trace (FAIL blocks implementation)</text>
+  </g>
+  <!-- row 3: run -->
+  <g>
+    <rect x="28" y="210" width="252" height="36" rx="18" fill="#bc4c00"/>
+    <text x="154" y="234" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Implement and run it"</text>
+    <text x="294" y="234" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="228" font-size="14" font-weight="600" fill="#1f2328">🔧 engineer executes — smoke first, then production, 3 seeds</text>
+    <text x="322" y="246" font-size="12" fill="#57606a">lands: experiments/results/&lt;run&gt;/ (manifest + per-seed results)</text>
+  </g>
+  <!-- row 4: audit -->
+  <g>
+    <rect x="28" y="268" width="252" height="36" rx="18" fill="#cf222e"/>
+    <text x="154" y="292" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Are these numbers real?"</text>
+    <text x="294" y="292" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="286" font-size="14" font-weight="600" fill="#1f2328">🔍 auditor checks every number against the files, adversarially</text>
+    <text x="322" y="304" font-size="12" fill="#57606a">lands: verdict + trace (audit_passed only on full PASS — the key that unlocks "verified")</text>
+  </g>
+  <!-- row 5: write -->
+  <g>
+    <rect x="28" y="326" width="252" height="36" rx="18" fill="#8250df"/>
+    <text x="154" y="350" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Draft the results section"</text>
+    <text x="294" y="350" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="344" font-size="14" font-weight="600" fill="#1f2328">✍️ writer drafts inside the firewall — audited claims only, numbers pasted never recalled</text>
+    <text x="322" y="362" font-size="12" fill="#57606a">lands: paper/src/ (a missing claim stops the writer — it asks, it never invents)</text>
+  </g>
+  <!-- row 6: deck -->
+  <g>
+    <rect x="28" y="384" width="252" height="36" rx="18" fill="#1b7c83"/>
+    <text x="154" y="408" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Make the progress deck"</text>
+    <text x="294" y="408" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="402" font-size="14" font-weight="600" fill="#1f2328">📽️ presenter builds it — figures are PDF screenshots, judgment slides stay blank for you</text>
+    <text x="322" y="420" font-size="12" fill="#57606a">lands: presentations/&lt;deck&gt;/ (paper-study decks ship a confusion ledger = your reading list)</text>
+  </g>
+  <!-- row 7: tree -->
+  <g>
+    <rect x="28" y="442" width="252" height="36" rx="18" fill="#1a7f37"/>
+    <text x="154" y="466" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Show me the tree"</text>
+    <text x="294" y="466" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="460" font-size="14" font-weight="600" fill="#1f2328">🌳 the growth tree — every thread at its true station, dead branches kept honestly</text>
+    <text x="322" y="478" font-size="12" fill="#57606a">view: docs/fleet/tree.html (animated SVG) or --ascii in any terminal</text>
+  </g>
+  <!-- row 8: wrap up (highlight) -->
+  <g>
+    <rect x="22" y="498" width="836" height="66" rx="12" fill="#dafbe1" stroke="#1a7f37" stroke-width="1.5"/>
+    <rect x="28" y="512" width="252" height="38" rx="19" fill="#116329"/>
+    <text x="154" y="537" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">"Wrap up" ★</text>
+    <text x="294" y="537" font-size="16" fill="#1a7f37">→</text>
+    <text x="322" y="528" font-size="14" font-weight="700" fill="#116329">📋 steward harvests the whole day: handoff page + growth tree + the entire Obsidian vault</text>
+    <text x="322" y="548" font-size="12.5" font-weight="600" fill="#1a7f37">THE phrase that grows the vault — daily note, line notes, concept-card stubs, paper notes, MOC in one pass</text>
+  </g>
+  <!-- row 9: coach -->
+  <g>
+    <rect x="28" y="584" width="252" height="36" rx="18" fill="#57606a"/>
+    <text x="154" y="608" font-size="14.5" font-weight="700" fill="#ffffff" text-anchor="middle">"Optimize the fleet"</text>
+    <text x="294" y="608" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="602" font-size="14" font-weight="600" fill="#1f2328">🎯 coach mines the outcome ledger — evidence-cited proposals, none self-applying</text>
+    <text x="322" y="620" font-size="12" fill="#57606a">lands: docs/fleet/improvement_&lt;date&gt;.md (approving them is your call)</text>
+  </g>
+
+  <text x="32" y="666" font-size="12.5" fill="#57606a">Lost? Ask "where were we?" — the leader reads docs/CURRENT_STATE.md and tells you. Suspect a skipped gate: python tools/fleet_status.py</text>
+</svg>

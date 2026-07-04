@@ -4,6 +4,9 @@
 
 **一条命令，给你的科研项目配一支不敢糊弄你的 AI 团队。**
 
+*又名「PI 模拟器」：组员不睡觉、不闹情绪，
+而且没有审计记录时，谁也不敢跟你报结果。*
+
 [![CI](https://github.com/shanyuzhe/research-fleet/actions/workflows/ci.yml/badge.svg)](https://github.com/shanyuzhe/research-fleet/actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](https://claude.com/claude-code)
@@ -70,9 +73,33 @@ claude
 要记的命令只有 `/research-init` 一条。剩下的调度是"老板会话"自己的事，
 你只管用中文（或任何语言）提要求。
 
+## 🗣️ 九句口令，就是全部操作
+
+不用背命令，也不用记 agent 名字——下面九句话（或者你自己的任何说法）
+覆盖从开题到投稿的所有日常。**绿色那句最重要：不说"收尾"，笔记库就不长。**
+
+<img src="docs/assets/phrasebook.zh-CN.svg" alt="口令表：你说一句话，系统动一整套" width="100%">
+
+<details>
+<summary>文字版（方便复制粘贴）</summary>
+
+| 你说 | 谁动 | 落盘什么 |
+|---|---|---|
+| **`“有人做过 X 吗？”`** | 🔭 scout 查新，引用当场核实 | `docs/lit/` |
+| **`“把 X 预注册一下”`** | 📝 leader 陪你定判据和认输条件，auditor 审设计 | `docs/prereg/` + 审计 trace |
+| **`“实现并跑起来”`** | 🔧 engineer：smoke → 3 seeds | `experiments/results/` |
+| **`“这些数是真的吗？”`** | 🔍 auditor 逐数对文件 | verdict + `audit_passed` |
+| **`“把结果章节写了”`** | ✍️ writer 防火墙内下笔 | `paper/src/` |
+| **`“做个进展 deck”`** | 📽️ presenter，观点页留白 | `presentations/` |
+| **`“给我看看树”`** | 🌳 生长树 | `tree.html` / 终端 |
+| **`“收尾”`** ★ | 📋 steward 收割一整天 | 状态页 + 生长树 + **全套 Obsidian 笔记** |
+| **`“优化一下舰队”`** | 🎯 coach 带证据提案 | `docs/fleet/` 提案 |
+
+</details>
+
 📖 **想看完整流程？** [docs/GUIDE.zh-CN.md](docs/GUIDE.zh-CN.md)——每个
-agent 什么时候出动、一条研究线的一生、每天 10 分钟的知识内化仪式、
-Obsidian 笔记库会长成什么样。
+agent 什么时候出动、一条研究线的一生、笔记的 SOP 生成点地图、每天
+10 分钟的知识内化仪式。
 
 ## 👥 七个员工，各管一摊
 

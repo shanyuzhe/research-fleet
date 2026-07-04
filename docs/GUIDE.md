@@ -22,7 +22,12 @@ the feature is wrong:
 
 There is no agent API to learn. You talk to the **leader** (your main
 session) in plain language; the leader knows the routing table and the
-gates. This table is the whole "orchestration manual":
+gates. The quick-reference version is this picture (also in the README):
+
+<img src="assets/phrasebook.en.svg" alt="Phrase book" width="100%">
+
+The full version is the table below — it is the entire "orchestration
+manual":
 
 | the situation | you say something like | who flies | what lands on disk | what only YOU do |
 |---|---|---|---|---|

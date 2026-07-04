@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 700" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
+  <rect x="0" y="0" width="880" height="700" rx="14" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="32" y="46" font-size="21" font-weight="700" fill="#1f2328">🗣️ 口令表 — 你说一句话，系统动一整套</text>
+  <text x="32" y="70" font-size="13" fill="#57606a">左边是你（用人话说），右边是背后发生的事。口令不是命令——换成你自己的说法一样生效，路由是 leader 的事。</text>
+
+  <!-- row 1: scout -->
+  <g>
+    <rect x="28" y="94" width="252" height="36" rx="18" fill="#0969da"/>
+    <text x="154" y="118" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“有人做过 X 吗？”</text>
+    <text x="294" y="118" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="112" font-size="14" font-weight="600" fill="#1f2328">🔭 scout 出动查新，每条引用当场联网核实</text>
+    <text x="322" y="130" font-size="12" fill="#57606a">落盘：docs/lit/&lt;topic&gt;.md（查新判定：NOVEL / CROWDED / DONE）</text>
+  </g>
+  <!-- row 2: prereg -->
+  <g>
+    <rect x="28" y="152" width="252" height="36" rx="18" fill="#9a6700"/>
+    <text x="154" y="176" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“把 X 预注册一下”</text>
+    <text x="294" y="176" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="170" font-size="14" font-weight="600" fill="#1f2328">📝 leader 陪你定成功判据和认输条件，auditor 先审设计</text>
+    <text x="322" y="188" font-size="12" fill="#57606a">落盘：docs/prereg/x.md + 设计审计 trace（FAIL 就地拦住实现）</text>
+  </g>
+  <!-- row 3: run -->
+  <g>
+    <rect x="28" y="210" width="252" height="36" rx="18" fill="#bc4c00"/>
+    <text x="154" y="234" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“实现并跑起来”</text>
+    <text x="294" y="234" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="228" font-size="14" font-weight="600" fill="#1f2328">🔧 engineer 执行：smoke 先行，过了才正式跑 3 seeds</text>
+    <text x="322" y="246" font-size="12" fill="#57606a">落盘：experiments/results/&lt;run&gt;/（manifest + 逐 seed 结果）</text>
+  </g>
+  <!-- row 4: audit -->
+  <g>
+    <rect x="28" y="268" width="252" height="36" rx="18" fill="#cf222e"/>
+    <text x="154" y="292" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“这些数是真的吗？”</text>
+    <text x="294" y="292" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="286" font-size="14" font-weight="600" fill="#1f2328">🔍 auditor 逐个数字对文件，敌意审查</text>
+    <text x="322" y="304" font-size="12" fill="#57606a">落盘：verdict + trace（全 PASS 才落 audit_passed，claim 才许升 verified）</text>
+  </g>
+  <!-- row 5: write -->
+  <g>
+    <rect x="28" y="326" width="252" height="36" rx="18" fill="#8250df"/>
+    <text x="154" y="350" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“把结果章节写了”</text>
+    <text x="294" y="350" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="344" font-size="14" font-weight="600" fill="#1f2328">✍️ writer 防火墙内下笔：只认过审 claim，数字只粘贴不背</text>
+    <text x="322" y="362" font-size="12" fill="#57606a">落盘：paper/src/（缺 claim 就停下来问你，不编）</text>
+  </g>
+  <!-- row 6: deck -->
+  <g>
+    <rect x="28" y="384" width="252" height="36" rx="18" fill="#1b7c83"/>
+    <text x="154" y="408" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“做个进展 deck”</text>
+    <text x="294" y="408" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="402" font-size="14" font-weight="600" fill="#1f2328">📽️ presenter 建 deck：图只截 PDF，观点页留白等你</text>
+    <text x="322" y="420" font-size="12" fill="#57606a">落盘：presentations/&lt;deck&gt;/（精读 deck 附 confusion 账本 = 你的阅读清单）</text>
+  </g>
+  <!-- row 7: tree -->
+  <g>
+    <rect x="28" y="442" width="252" height="36" rx="18" fill="#1a7f37"/>
+    <text x="154" y="466" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“给我看看树”</text>
+    <text x="294" y="466" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="460" font-size="14" font-weight="600" fill="#1f2328">🌳 生长树：每条线的真实位置，枯枝也诚实保留</text>
+    <text x="322" y="478" font-size="12" fill="#57606a">查看：docs/fleet/tree.html（SVG 动画）或终端 --ascii</text>
+  </g>
+  <!-- row 8: wrap up (highlight) -->
+  <g>
+    <rect x="22" y="498" width="836" height="66" rx="12" fill="#dafbe1" stroke="#1a7f37" stroke-width="1.5"/>
+    <rect x="28" y="512" width="252" height="38" rx="19" fill="#116329"/>
+    <text x="154" y="537" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">“收尾” ★</text>
+    <text x="294" y="537" font-size="16" fill="#1a7f37">→</text>
+    <text x="322" y="528" font-size="14" font-weight="700" fill="#116329">📋 steward 收割一整天：状态页 + 生长树 + 全套 Obsidian 笔记</text>
+    <text x="322" y="548" font-size="12.5" font-weight="600" fill="#1a7f37">唯一让笔记库生长的口令 —— 今日笔记、线笔记、概念卡空壳、文献笔记、MOC 一次刷新</text>
+  </g>
+  <!-- row 9: coach -->
+  <g>
+    <rect x="28" y="584" width="252" height="36" rx="18" fill="#57606a"/>
+    <text x="154" y="608" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">“优化一下舰队”</text>
+    <text x="294" y="608" font-size="16" fill="#57606a">→</text>
+    <text x="322" y="602" font-size="14" font-weight="600" fill="#1f2328">🎯 coach 挖 outcome 账本，带证据提案——一条也不自动生效</text>
+    <text x="322" y="620" font-size="12" fill="#57606a">落盘：docs/fleet/improvement_&lt;date&gt;.md（批准与否在你）</text>
+  </g>
+
+  <text x="32" y="666" font-size="12.5" fill="#57606a">拿不准就问一句 “现在该干嘛？” —— leader 会读 docs/CURRENT_STATE.md 告诉你。怀疑跳步了：python tools/fleet_status.py</text>
+</svg>
