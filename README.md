@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1672" height="941" alt="4ac5ea81b90b191c7e12b6589a0a5ce1" src="https://github.com/user-attachments/assets/66e3cec3-fbc4-4968-8fb8-4105b9a7fc30" /><div align="center">
 
 # ⛵ ResearchFleet
 
@@ -18,6 +18,7 @@ and never claims a result without an audit trail.*
 </div>
 
 ---
+![Uploading 4ac5ea81b90b191c7e12b6589a0a5ce1.png…]()
 
 Everyone doing research with AI eventually hits the same wall: **the AI is
 too fluent — so fluent you can't tell which sentences are true.**
