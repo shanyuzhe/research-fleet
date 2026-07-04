@@ -64,6 +64,31 @@ What this buys: at any moment, `python tools/growth_tree.py --ascii` shows
 every thread at its true station, and `python tools/fleet_status.py` proves
 no thread skipped a gate. That is "steady progress" made checkable.
 
+## How the Obsidian vault gets generated — the SOP map
+
+You never "write notes" as a separate chore, and you never ask for a note
+explicitly. The vault is a **by-product of the SOP**: normal research
+actions leave raw material behind, and one phrase — **"wrap up"** — makes
+the steward harvest all of it into `notes/`. This table is the full
+generation map:
+
+| SOP step (what you did today) | raw material it leaves | what appears in `notes/` after "wrap up" | your follow-up |
+|---|---|---|---|
+| asked "has anyone done X?" (scout) | verified entry in `docs/lit/` | `papers/<slug>.md` — metadata + why it entered the project | add your reading notes below the markers |
+| made a paper-study deck (presenter) | `confusion.md` ledger next to the deck | each unresolved confusion → a **concept card stub** + a "worth understanding" checkbox in today's daily note | read the paper against the ledger, answer the card |
+| an audit came back (auditor) | Blocking items in the verdict | each blocking item → "worth understanding" entry, concept stub if it names a concept | answer, or rule on the PARTIAL |
+| any thread changed stage (prereg/run/verify/paper) | growth-log diff | `daily/<today>.md` "What moved" + the thread's `lines/<slug>.md` timeline | skim; add "My take" if a call was yours |
+| killed a thread | kill verdict + epitaph | the line note gains its epitaph + a concept card for the failure mode | write "what I actually learned" — dead threads are tuition |
+| made a gate call that felt expensive | your line in the outcome ledger | surfaces in "worth understanding" | one honest sentence is enough |
+
+Two consequences worth spelling out:
+
+- **No "wrap up", no vault growth.** If the vault feels stale, you skipped
+  the phrase — it is the single trigger, deliberately (one ritual, not five).
+- **The machine only ever asks; sections that make you smarter are yours.**
+  Concept-card answers, "My take", "What I actually learned" — if the fleet
+  ever fills those in, that's a bug (and a ledger-worthy one).
+
 ## The daily 10 minutes (where internalization happens)
 
 The steward maintains `notes/` as an Obsidian vault. Your ritual, after

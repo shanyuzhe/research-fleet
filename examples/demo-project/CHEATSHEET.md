@@ -13,11 +13,10 @@ names — but here's what happens behind the curtain.
 | "Are these results real?" | auditor | verdict + trace in `.fleet/traces/` |
 | "Write it up" | writer (sees only verified claims) | `paper/src/` |
 | "Make the journal-club / progress deck" | presenter | `presentations/<deck>/` + confusion ledger (your reading list) |
-| "Wrap up today" | steward | `docs/CURRENT_STATE.md` refreshed |
+| "Wrap up today" | steward | `docs/CURRENT_STATE.md` + growth log/tree + the whole `notes/` vault refreshed (daily note, line notes, concept-card stubs, MOC) — **this one phrase is what makes the Obsidian vault grow** |
 | "Make the team better" | coach | `docs/fleet/improvement_<date>.md` — evidence-based proposals from `.fleet/outcomes.jsonl` |
 | "Show me the paper so far" | writer (growth snapshot) | current-best draft from today's verified claims, gaps stubbed |
 | "Show me the tree" | steward | `docs/fleet/tree.html` — animated growth replay (`python tools/growth_tree.py`; `--ascii` for terminal) |
-| "Wrap up today" (also) | steward | `notes/daily/<date>.md` — Obsidian review note: what moved + what's worth understanding |
 
 ## The five-file mental model
 

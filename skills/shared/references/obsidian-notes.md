@@ -123,9 +123,28 @@ A filled vault (three threads, one answered card, one open card, one paper
 note, populated MOC) ships in `examples/demo-project/notes/` — open it in
 Obsidian and check the graph view to see the web this contract produces.
 
-## Update triggers
+## Generation pipeline (what creates each note, from which source)
 
-Steward regenerates machine sections on each sync pass / end of session
-(same trigger as CURRENT_STATE + growth log). The daily note for today is
-created if absent. Nothing is generated retroactively for silent days —
-no fabricated diary entries.
+The vault is a *harvest*, not a separate chore. One trigger drives it: the
+steward's sync pass (the user says **"wrap up"**, or a big result lands).
+On each pass the steward walks this table top to bottom:
+
+| target note | generated/updated from | rule |
+|---|---|---|
+| `daily/<today>.md` | growth-log diff + git log since last pass | create if absent; "What moved" = stage changes; "Worth understanding" = harvest below |
+| "Worth understanding" entries | presenter `confusion.md` ledgers · audit verdict Blocking items · leader gate decisions logged in the ledger | every entry links a concept card; unresolved entries carry over to the next daily note until answered |
+| `concepts/<slug>.md` | first reference from any harvest source | create as a STUB: frontmatter + the spawning question + backlinks. Body stays empty — answers are human-only |
+| `lines/<slug>.md` | growth log (stage/timeline) + claims/traces/prereg paths | update machine section: timeline, evidence links; on kill, add the epitaph + killing trace |
+| `papers/<slug>.md` | new entries in `docs/lit/` since last pass | one note per paper the scout verified: metadata + why-it-entered + which decision it anchors |
+| `00_MOC.md` | all of the above | regenerate the four machine lists (threads / recent dailies / open cards / papers) |
+
+Nothing is generated retroactively for silent days — no fabricated diary
+entries. Machine sections only; human text is never touched.
+
+## What the human generates (the other half of the contract)
+
+- concept-card **answers** (the internalization act itself)
+- `My take` in daily notes · `What I actually learned` in line notes
+- standing questions in the MOC
+- any fully hand-made note (no markers) — the fleet will link to it but
+  never edit it

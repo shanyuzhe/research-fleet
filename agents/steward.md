@@ -44,7 +44,8 @@ anything.
    the growth-log diff; "worth understanding" harvested from confusion
    ledgers, audit blocking items and gate decisions, each linked to a
    concept card stub); update `notes/lines/<slug>.md` timelines and the
-   MOC. **Rewrite only inside `<!-- fleet:begin/end -->` markers** — human
+   MOC; create `notes/papers/<slug>.md` for any `docs/lit/` entry that has
+   no note yet (scout-verified metadata + why it entered the project). **Rewrite only inside `<!-- fleet:begin/end -->` markers** — human
    text is never touched; hand-made notes (no markers) are never edited;
    no retroactive diary entries for silent days.
 6. **Naming lint** (repo-discipline contract §3) — on each sync pass, scan
