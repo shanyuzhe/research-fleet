@@ -18,7 +18,7 @@ and never claims a result without an audit trail.*
 </div>
 
 ---
-![Uploading 4ac5ea81b90b191c7e12b6589a0a5ce1.png…]()
+
 
 Everyone doing research with AI eventually hits the same wall: **the AI is
 too fluent — so fluent you can't tell which sentences are true.**
