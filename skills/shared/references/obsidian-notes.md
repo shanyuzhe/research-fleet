@@ -117,6 +117,12 @@ Obsidian's graph view then *is* the research map — clusters are threads,
 orphan nodes are unstudied confusions, and the daily folder is a diary of
 the tree growing.
 
+## Living example
+
+A filled vault (three threads, one answered card, one open card, one paper
+note, populated MOC) ships in `examples/demo-project/notes/` — open it in
+Obsidian and check the graph view to see the web this contract produces.
+
 ## Update triggers
 
 Steward regenerates machine sections on each sync pass / end of session

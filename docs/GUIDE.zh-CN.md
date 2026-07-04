@@ -1,0 +1,102 @@
+# 使用指南 — 一个 ResearchFleet 项目到底怎么转
+
+> 一页纸回答新用户必问的两件事：**"什么时候哪个 agent 出动？"** 和
+> **"我每天具体要做什么？"**（[English](GUIDE.md)）
+
+## 两个承诺
+
+这套系统里的一切都为两个目标服务；哪个功能和它们打架，错的是功能：
+
+1. **稳定推进。** 每个工作日至少有一条线在树上前进一格、看得见——并且
+   永远不悄悄倒退：验证过的结果不推倒重来，死掉的方向不复活，项目状态
+   绝不只活在聊天记录里。
+2. **做完你变强了。** AI 的每样产出都设计成*给你留问题，而不是替你留
+   答案*：没搞懂的东西变成等你亲手作答的卡片，观点页永远留白，笔记库把
+   项目历史长成你自己的知识网。让人变笨的自动化是 bug。
+
+## 编排只有一条规则：你从来不直接调 agent
+
+没有 agent API 要学。你用人话跟 **leader**（主会话）说需求，路由表和
+门禁是它的事。下面这张表就是全部"编排手册"：
+
+| 场景 | 你大概会说 | 谁出动 | 磁盘上落下什么 | 只有你能做的事 |
+|---|---|---|---|---|
+| 有了新想法，不知道有没有人做过 | "有人做过 X 吗？" | scout | `docs/lit/<topic>.md`、查新判定 | 决定这个问题值不值得开一条线 |
+| 准备验证某件事 | "把 X 预注册一下" | leader 陪你写 → auditor 审设计 | `docs/prereg/x.md` + 设计审计记录 | 拍板成功判据和**认输条件** |
+| 预注册过审了 | "实现并跑起来" | engineer（smoke → 正式跑） | 代码、`experiments/results/<run>/` | 超过 1 小时的跑批准一下 |
+| 就想随手试试 | "让我快速试个东西" | engineer，scratch 通道 | `experiments/scratch/`（数字进不了 claim） | 记住：好玩 ≠ 证据 |
+| 结果落盘了 | "这些数是真的吗？" | auditor（实验审计） | verdict + trace（PASS 时落 `audit_passed`） | PARTIAL 时由你裁决 |
+| 审计过了 | "升级成 claim" | leader 更新 `claims/` | claim 文件 `verified`（H1 hook 把关 marker） | 决定这条结论允许说到什么程度 |
+| 该写论文了 | "把结果章节写了" | writer（防火墙内） | `paper/src/` | 先写好 `NARRATIVE.md`——故事是你的 |
+| 周五组会 | "做进展汇报 deck" | presenter | `presentations/<deck>/` | 观点页你来填 |
+| 精读一篇新论文 | "给这个 PDF 做 paper-study deck" | presenter（反向学习法） | deck + confusion 账本 | 对着账本读论文 |
+| 一天结束 | "收尾" | steward | `CURRENT_STATE.md`、生长日志、`notes/` 刷新 | 10 分钟笔记仪式（见下） |
+| 每隔几周 | "优化一下舰队" | coach | `docs/fleet/improvement_<date>.md` | 批准/否决提案——没有一条会自动生效 |
+
+两个习惯覆盖 90% 的日子：**开会话先让 leader 读
+`docs/CURRENT_STATE.md`**（开了 SessionStart hook 就是自动的），
+**真正干了活的日子以"收尾"结束**。
+
+## 一条研究线的一生（整个系统的主轴）
+
+每条线都走同样的七站。阶段就是树上的 emoji，站与站之间的门禁是机械的：
+
+```
+ 🌰 想法 ──"预注册"──▶ 🌱 预注册 ──设计审计 PASS──▶ 实现
+     ▲                     │ FAIL 就地拦住——这正是目的
+     │                     ▼
+ scout 查新            smoke 门 ──▶ 正式跑（3 seeds）
+                                      │
+                                      ▼
+ 🍎 进论文 ◀── claim 验证 🌳 ◀──实验审计 PASS──🌿 有数据 → 🪴 过审
+              （audit_passed marker      │
+               解锁；H1 hook 堵抄近路）   └─ FAIL/kill → ✝ 墓地，
+                                            写好墓志铭，永不删除
+```
+
+这套东西买到的是：任何时刻 `python tools/growth_tree.py --ascii` 都能
+看到每条线的真实位置，`python tools/fleet_status.py` 能证明没有一条线
+跳过门禁。"稳定推进"由此变成可检验的，而不是一种感觉。
+
+## 每天 10 分钟（知识内化发生的地方）
+
+steward 把 `notes/` 维护成一个 Obsidian 库。"收尾"之后你的仪式：
+
+1. 打开 `notes/daily/<今天>.md`。**今天什么动了**已经填好（来自生长
+   日志），扫一眼。
+2. **值得搞懂**列着舰队今天没能落地的东西——confusion 账本条目、审计
+   blocking 项、门禁裁决。每条都链到一张概念卡的空壳。
+3. 挑**一张**卡，用自己的话把答案写了。就这些。
+4. （可选）在**我的判断**下面补一行——为什么今天的几个决定是对的。
+
+笔记库的结构、知识网长起来是什么样：契约见
+[obsidian-notes](../skills/shared/references/obsidian-notes.md)，**活样本**见
+[`examples/demo-project/notes/`](../examples/demo-project/notes/)——用
+Obsidian 打开那个文件夹看 graph view：一簇是一条研究线，你写过答案的
+概念卡是簇与簇之间的桥，没答的卡是孤零零等你注意的点。舰队负责提问，
+答案归你——这就是内化契约。
+
+## 哪些事非你不可（故意设计成这样）
+
+下面这些事，系统宁可停下来等你，也不会替你猜——正是它们让研究是
+*你的*研究：
+
+- 研究问题本身，以及一条线该不该存在
+- 预注册的成功判据和认输条件
+- PARTIAL 审计的裁决（"重跑，还是带着 caveat 接受？"）
+- kill 一条线（和它的一句话墓志铭）
+- 论文讲什么故事（`NARRATIVE.md`）和每一页观点页
+- 概念卡的答案
+- coach 提案的批准
+
+如果一整周这些事一件都没送到你面前，那有问题——去看
+`docs/CURRENT_STATE.md` 的"等你输入"一节。
+
+## 感觉不对劲的时候
+
+| 症状 | 动作 |
+|---|---|
+| "我们是不是跳步了？" | `python tools/fleet_status.py`——红灯说明违规已经在磁盘上了 |
+| leader 越来越像普通聊天机器人 | 说"重读 CLAUDE.md"（或把 SessionStart hook 开上） |
+| 同一个别扭连续三天出现 | 老实记进账本，然后说"优化一下舰队"——coach 就是为这个存在的 |
+| 手痒想直接把 claim 改成 verified | 忍住——去跑审计；开了 hook 的话这个编辑本来也会被弹回来 |

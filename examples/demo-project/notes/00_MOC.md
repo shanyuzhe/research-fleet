@@ -11,16 +11,24 @@ project: "vlm-judge-probing"
 
 <!-- fleet:begin -->
 ## Threads (lines of work)
-_(links appear as threads are planted)_
+- [[readout_gap]] 🍎 in paper §4.1 (claim C3)
+- [[fusion_gate]] ✝ killed 2026-06-28 — baseline confound
+- [[visual_leg]] 🪴 design-audit passed, production queued
 
 ## Recent daily notes
-_(last 7 days)_
+- [[2026-07-03]]
 
 ## Concepts awaiting your answer
-_(unresolved cards — your reading list)_
+- [ ] [[baseline_confound]] ← spawned by fusion_gate's kill verdict
+
+## Concepts answered
+- [x] [[held_out_evaluation]]
 
 ## Papers read
-_(scout-verified literature notes)_
+- [[zheng2023_llm_judge]]
 <!-- fleet:end -->
 
 ## My standing questions
+
+- If the probe reads the judgment better than decoding writes it, what else
+  is sitting in those hidden states that we never ask for?

@@ -79,6 +79,10 @@ claude
 `/research-init` is the only command to remember. Routing is the leader
 session's job — you make requests in whatever language you like.
 
+📖 **Want the full flow?** [docs/GUIDE.md](docs/GUIDE.md) — when each agent
+fires, the life of one research thread, the daily 10-minute ritual, and
+what the knowledge vault grows into.
+
 ## 👥 Seven staff, one desk each
 
 | who | does | what it must never do |
